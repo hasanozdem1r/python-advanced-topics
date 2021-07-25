@@ -7,10 +7,7 @@ This repository cover below topics
 
 ## Installation
 Open your terminal and write the given command.
-                                                                                                                 
-git clone  [link](https://github.com/hasanozdem1r/python_advanced_topics)
-
-
+                                                                                                                
 ```bash
 git clone https://github.com/hasanozdem1r/python_advanced_topics
 ```
