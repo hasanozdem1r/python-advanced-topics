@@ -4,6 +4,8 @@ This repository cover below topics
 1. Decorators
 2. Advanced Flow Control
 3. Multithreading & Multiprocessing
+4. Database Systems and CRUD 
+5. Network 
 
 ## Installation
 Open your terminal and write the given command.
