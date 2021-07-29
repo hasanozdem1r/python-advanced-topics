@@ -7,7 +7,7 @@ host_socket=socket(AF_INET,SOCK_DGRAM)
 host_socket.bind((host_name,host_port))
 print("Host ready to retrieve data")
 while True:
-
+    #recvfrom(port_name) receive msgs from given port
     message,client_address=host_socket.recvfrom(4096)
     print("Message received from client",message)
     new_msg=message.upper()
