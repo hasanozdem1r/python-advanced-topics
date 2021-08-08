@@ -1,11 +1,13 @@
 # PYTHON ADVANCED TOPICS
 In this repository you will be learning advanced Python topics.  
-This repository cover below topics
+This repository covers below topics
 1. Decorators
 2. Advanced Flow Control
 3. Multithreading & Multiprocessing
-4. Database Systems and CRUD 
-5. Network 
+4. Database Systems and CRUD Operations
+5. Networking
+6. Object-Oriented Programming
+7. Comprehensions 
 
 ## Installation
 Open your terminal and write the given command.

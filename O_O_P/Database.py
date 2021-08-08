@@ -27,7 +27,6 @@ class Database:
             print(row)
     def insert_db(self,email,full_name,username,password):
         """
-
         :param email:
         :param full_name:
         :param username:
