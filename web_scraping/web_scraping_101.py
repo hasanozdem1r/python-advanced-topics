@@ -26,8 +26,8 @@ Processing Online ; Easy to develop, great for fewer pages, use for research
 Processing Offline ; More complex, great for larger volumes, use for engineered solutions
 """
 
-# https://en-gb.wordpress.org/plugins/browse/popular/
-# https://hansard.parliament.uk/search/Members?house=commons&currentFormerFilter=1
+# https://en-gb.wordpress.org/plugins/browse/popular/ -> offline
+# https://hansard.parliament.uk/search/Members?house=commons&currentFormerFilter=1 -> online
 
 import requests
 import bs4

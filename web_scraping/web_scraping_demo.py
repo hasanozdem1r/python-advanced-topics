@@ -1,5 +1,6 @@
 import requests,re
 from bs4 import BeautifulSoup
+import os,pickle
 
 PAGE="http://localhost:8000/auto_mpg.html"
 
@@ -14,7 +15,6 @@ def process_car_block(soup):
     print(f'We have {len(rows)} rows of scraped car data')
     print(rows[0])
     print(rows[-1])
-
 
 def extract_data(c_b, soup):
     name: str = c_b.find('span', class_='car_name').text
@@ -36,7 +36,6 @@ def extract_data(c_b, soup):
     row = dict(name=name, cylinders=cylinders, weight=weight, year=year, territory=territory, \
                accelaration=acceleration, mpg=mpg, horse_power=horse_power, displacement=displacement)
     return row
-
 
 def extract_cylinders(c_b):
     cylinders: str = c_b.find('span', class_='cylinders').text
@@ -84,11 +83,18 @@ def extract_displacement(text):
 
 
 if __name__=="__main__":
-    import os,pickle
-    filename='scraped_page_result.pickle'
-    print(f'Fetching {PAGE} from the internet')
+    filename = 'scraped_page_result.pickle'
+    if os.path.exists(filename):
+        with open(filename,'rb') as file:
+            print(f'Loading cached {filename}')
+            result=pickle.load(file)
+    else:
+        print(f'Fetching {PAGE} from the internet')
+        result = requests.get(PAGE)
+        with open(filename,'wb') as file:
+            print(f'Writing cached {filename}')
+            pickle.dump(result,file)
 
-    result=requests.get(PAGE)
     assert result.status_code==200, f'Got status code{result.status_code}\'' \
                                     f'which isn"t a success'
     source=result.text
