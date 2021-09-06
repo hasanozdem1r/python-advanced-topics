@@ -1,3 +1,5 @@
+import csv
+
 import requests,re
 from bs4 import BeautifulSoup
 import os,pickle
@@ -15,6 +17,19 @@ def process_car_block(soup):
     print(f'We have {len(rows)} rows of scraped car data')
     print(rows[0])
     print(rows[-1])
+
+
+    # Export a CSV file
+    with open('scraped_cars.csv','w') as file:
+        writer=csv.DictWriter(file,fieldnames=row.keys())
+        writer.writeheader()
+        writer.writerows(rows)
+
+    # Create a Pandas DF
+
+    # Review our data
+
+    # Investigate relationships graphically
 
 def extract_data(c_b, soup):
     name: str = c_b.find('span', class_='car_name').text
