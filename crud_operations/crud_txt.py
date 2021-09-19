@@ -1,7 +1,7 @@
 # this demo simply register system to txt file
 # each line includes : name surname id_number phone_number
 
-file=open("employee_database.txt","a")
+file=open("data_sources/employee_database.txt", "a")
 
 class File_Operations:
 
@@ -20,7 +20,7 @@ class File_Operations:
             file.write(employee_information)
 
 
-txt_obj=File_Operations("employee_database.txt")
+txt_obj=File_Operations("data_sources/employee_database.txt")
 
 #txt_obj.write_line("Hasan Özdemir 1234567890 534534534 \n")
 

@@ -20,7 +20,7 @@ class CsvOperations:
             food_write=csv.writer(csv_file, delimiter=' ', quotechar='|')
             food_write.writerow([food_name,scientific_name,group,sub_group])
 
-csv_obj=CsvOperations("generic-food.csv")
+csv_obj=CsvOperations("data_sources/generic-food.csv")
 
 # read all rows
 csv_obj.read_csv()
