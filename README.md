@@ -1,16 +1,19 @@
-# PYTHON ADVANCED TOPICS
+![](https://ict.iitk.ac.in/wp-content/uploads/advanced-python-ict.png)
+# ADVANCED PYTHON  
 In this repository you will be learning advanced Python topics.  
+<br>
 This repository covers below topics
-1. Decorators
-2. Advanced Flow Control
-3. Multithreading & Multiprocessing
-4. Database Systems and CRUD Operations
-5. Networking (Network Fundamentals, Socket API)
-6. Object-Oriented Programming
-7. Comprehensions (dict, generator, list, set)
-8. API Practices (Wikipedia API)
-9. CRUD Operations for files (txt, csv, excel etc.)
-10. Web Scraping (BeautifulSoup, Requests)
+1. API PRACTICES (Fast API, Wikipedia API)
+2. AUTOMATE BORING STUFFS (Selenium, Linkedin Automation)
+3. COMPREHENSIONS (dict, generator, list, set)
+4. CRUD OPERATIONS (TXT,CSV,XLSX)
+5. DATABASE & CRUD
+6. DECORATORS 101
+7. FLOW CONTROL
+8. MULTITHREADING
+9. NETWORK FUNDAMENTALS (Basics, Socket API)
+10. OBJECT ORIENTED PROGRAMMING
+11. WEB SCRAPING (BS4, Requests)
 
 ## Installation
 Open your terminal and write the given command for project installation to your local.
@@ -30,8 +33,8 @@ http-server -> run after first executed
 
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
+Pull requests are welcome. 
+<br>For major changes, please open an issue first to discuss what you would like to change.<br>
 Please make sure to update tests as appropriate.
 
 ## License
