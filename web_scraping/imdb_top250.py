@@ -13,6 +13,7 @@ movies=soup_obj.find("tbody", {"class":"lister-list"}).find_all("tr",limit=250)
 
 movies_list=[]
 movie_order = 1
+
 for movie in movies:
     movie_title = movie.find("td",{"class":"titleColumn"}).find("a").text
     release_year: object = movie.find("span",{"class":"secondaryInfo"}).text.strip("()")
@@ -28,4 +29,5 @@ for movie in movies:
     )
 movies_df= pd.DataFrame(movies_list)
 print(movies_df)
+
 
