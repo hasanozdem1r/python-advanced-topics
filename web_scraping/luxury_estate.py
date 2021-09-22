@@ -1,17 +1,17 @@
 import re
 import requests
 from bs4 import BeautifulSoup
-
-
-
+from time import sleep
 
 
 class ScrapeRealEstate:
 
-    def __init__(self,country:str):
-        self.link = f'https://www.luxuryestate.com/{country}'
+    def __init__(self)->None:
+        self.initial_link = 'https://www.luxuryestate.com/'
 
-    def scrape_data(self)->list:
+    def scrape_1_page(self,country:str,id:str)->list:
+        self.link=f'{self.initial_link}{country}?pag={id}'
+        print(self.link)
         page_content = requests.get(self.link).content
         soup_obj = BeautifulSoup(page_content, 'html.parser')
         estates=soup_obj.find("ul", {"class":"search-list"}).find_all("li",limit=100)
@@ -30,6 +30,7 @@ class ScrapeRealEstate:
 
             estates_list.append(
                 {
+                    'estate_id':estate_id,
                     'estate_title':estate_title,
                     'estate_cost':estate_cost,
                     'estate_m2':estate_m2,
@@ -71,5 +72,7 @@ class ScrapeRealEstate:
         return estate_m2
 
 
-a=ScrapeRealEstate('germany')
-a.scrape_data()
+estate_obj=ScrapeRealEstate()
+# https://www.luxuryestate.com/germany?pag=1
+estate_obj.scrape_1_page('germany','1')
+
