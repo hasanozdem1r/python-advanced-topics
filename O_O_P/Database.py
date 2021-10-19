@@ -19,12 +19,14 @@ class Database:
             print("Connection Successful")
         except Exception as Error:
             print(Error)
+
     def read_db(self):
         cursor=self._connection.cursor()
         query="SELECT * FROM public.users"
         cursor.execute(query)
         for row in cursor.fetchall():
             print(row)
+
     def insert_db(self,email,full_name,username,password):
         """
         :param email:
