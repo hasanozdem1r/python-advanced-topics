@@ -41,4 +41,5 @@ class XlsxOperations:
 
 
 xlsx_obj=XlsxOperations(file)
-result:list=xlsx_obj.read_all_xlsx()
+result_data:list=xlsx_obj.read_all_xlsx()
+xlsx_obj.write_all_xlsx(result_data,'vocabulary')

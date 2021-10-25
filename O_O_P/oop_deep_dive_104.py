@@ -7,7 +7,6 @@ class Parrot:
     def swim(self):
         print("Parrot can't swim")
 
-
 class Penguin:
 
     def fly(self):
@@ -15,7 +14,6 @@ class Penguin:
 
     def swim(self):
         print("Penguin can swim")
-
 
 # common interface
 def flying_test(bird):

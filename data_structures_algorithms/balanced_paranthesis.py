@@ -13,3 +13,4 @@ def is_balanced(text:str)->bool:
         return False
 
 print(is_balanced('('))
+
