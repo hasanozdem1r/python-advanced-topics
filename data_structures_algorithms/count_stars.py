@@ -4,17 +4,17 @@ Input :
 |***********||||||||||*|||*********
 Output : 11 + 1
 """
-
-def method_1(text:str):
+def count_stars(text:str):
     opener=0
-    star=0
+    star_actual=0
+    stack_star=[]
     for i in text:
-        if i=='|':
-            opener+=1
-        elif opener==1:
-            star+=1
-        elif opener==2:
-            opener=0
-    print(star)
+        stack_star.append(i)
+        if stack_star.count("|")==2:
+            stack_star.remove("|")
+            stack_star.remove("|")
+            star_actual+=stack_star.count("*")
+            stack_star=["|"]
+    print(star_actual)
 
-method_1("|***********||||||||||*|||*********")
+count_stars("|***********||||||||||*|||****|*|****")
