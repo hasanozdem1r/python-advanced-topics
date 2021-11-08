@@ -1,0 +1,1 @@
+# https://python-istihza.yazbel.com/ileri_fonksiyonlar.html#lambda-fonksiyonlari
