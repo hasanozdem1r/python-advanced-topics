@@ -7,13 +7,16 @@ This repository covers below topics
 2. AUTOMATE BORING STUFFS (Selenium, Linkedin Automation)
 3. COMPREHENSIONS (dict, generator, list, set)
 4. CRUD OPERATIONS (TXT,CSV,XLSX)
-5. DATABASE & CRUD
-6. DECORATORS 101
-7. FLOW CONTROL
-8. MULTITHREADING
-9. NETWORK FUNDAMENTALS (Basics, Socket API)
-10. OBJECT ORIENTED PROGRAMMING
-11. WEB SCRAPING (BS4, Requests)
+5. DATA STRUCTURES & ALGORITHMS
+6. DATABASE
+7. DECORATORS 101
+8. FLOW CONTROL
+9. FUNCTIONS (LAMBDA, NESTED, GENERATORS)
+10. MULTITHREADING
+11. NETWORK FUNDAMENTALS (Basics, Socket API)
+12. OBJECT ORIENTED PROGRAMMING
+13. PROJECTS (Chatbot)
+14. WEB SCRAPING (BS4, Requests)
 
 ## Installation
 Open your terminal and write the given command for project installation to your local.
@@ -25,12 +28,15 @@ You might run this code in your terminal which is auto_mpg.html located.
 ```bash
 python -m http.server
 ```
-If you already installed Node.Js also you can do with npm.
+If you already installed Node.js also you can do with npm.
 ```bash
 npm install http-server -g -> run first
 http-server -> run after first executed
 ```
-
+## Acknowledgements
+1. Ýstihza Yazbel (Turkish)
+2. Python Tricks by Dan Bader (English)
+3. Pluralsight & Coursera
 
 ## Contributing
 Pull requests are welcome. 
