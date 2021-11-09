@@ -31,7 +31,7 @@ python -m http.server
 If you already installed Node.js also you can do with npm.
 ```bash
 npm install http-server -g -> run first
-http-server -> run after first executed
+http-server -> run after first line executed
 ```
 ## Acknowledgements
 1. Ýstihza Yazbel (Turkish)
@@ -44,4 +44,4 @@ Pull requests are welcome.
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[Massachusetts Institute of Technology](https://choosealicense.com/licenses/mit/)
