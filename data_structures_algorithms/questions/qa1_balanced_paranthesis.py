@@ -1,16 +1,35 @@
 # is a string balanced
-# balanced -> {} squiqles , [] brackets, () parenthesis
+# balanced -> {} squiggles , [] brackets, () parenthesis
 
-def is_balanced(text:str)->bool:
-    punctuation=[]
-    tokens=['[',']','(',')','{','}']
-    for i in text:
-        if i in tokens:
-            punctuation.append(i)
-    if (punctuation.count('(')==punctuation.count(')') and punctuation.count('[')==punctuation.count(']') and punctuation.count('{')==punctuation.count('}')):
-        return True
-    else:
-        return False
 
-print(is_balanced('('))
+def balanced_brackets(characters:str)->bool:
+    punctuation_stack=[]
+    # keys ---> (, {, [
+    # values -> ), }, ]
+    tokens={'(':')','{':'}','[':']'}
+    punctuations = ['[', ']', '(', ')', '{', '}']
+    for char in characters:
+        if char in punctuations:
+            punctuation_stack.append(char)
+        if len(punctuation_stack)>1 and punctuation_stack[-2] in tokens.keys():
+            if punctuation_stack[-1]==tokens[punctuation_stack[-2]]:
+                punctuation_stack.remove(punctuation_stack[-1])
+                punctuation_stack.remove(punctuation_stack[-1])
 
+    return True if len(punctuation_stack)==0 else False
+
+
+
+print(balanced_brackets('(())'))
+
+"""
+( -> ( 
+([ -> ([
+([] -> (
+(] -> (]
+(]( -> (](
+(]() -> (] 
+"""
+"""
+([])
+"""
