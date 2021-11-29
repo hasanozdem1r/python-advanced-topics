@@ -1,11 +1,21 @@
+import mysql as mysql
 import mysql.connector
+from configparser import ConfigParser
 
-#Connection string used to connect with the server
+# create a ConfigParser class instance
+conf_obj = ConfigParser()
+
+# read all information from config file
+conf_obj.read('database_config.ini')
+user_info = conf_obj["MYSQL_USER_INFO"]
+db_info = conf_obj["MYSQL_DB_CONFIG"]
+
 db_connection = mysql.connector.connect(
-  host="localhost",
-  user="user_name",
-  password="password"
+  host="{}".format(db_info["host"]),
+  user="{}".format(user_info["user"]),
+  password="{}".format(user_info['password'])
 )
-print(db_connection)
-if db_connection:
-  print("Connected")
+
+if __name__=='__main__':
+  mysql_obj=db_connection.connect()
+  print('Connected')
