@@ -1,4 +1,4 @@
-# Further redhttps://fastapi.tiangolo.com/
+# Further read https://fastapi.tiangolo.com/
 from fastapi import FastAPI
 
 app = FastAPI()
