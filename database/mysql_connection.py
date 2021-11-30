@@ -1,4 +1,3 @@
-import mysql as mysql
 import mysql.connector
 from configparser import ConfigParser
 
