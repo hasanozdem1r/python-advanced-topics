@@ -1,9 +1,8 @@
-# todo flow_control
 """
-loop else clauses
+Python script to understand fundamentals of ZIP function
 
+@ Hasan Özdemir 2021
 """
-
 
 # while .. else in practice -> evaluating stack programs
 def is_comment(item):
@@ -18,7 +17,7 @@ def execute(program):
     with '#' for the purposes of documentation. Stack-like means support for :
     item=stack.pop() #remove and return the top item
     stack.append(item) #push and item to the top
-    if stack : false in a boolean contect when empty
+    if stack : false in a boolean contact when empty
     :return:
     """
     # Find the start of the 'program' by skipping
@@ -28,7 +27,7 @@ def execute(program):
         if not is_comment(item):
             program.append(item)
             break
-        else:  # nobreak
+        else:  # no break
             print("Empty program")
             return
         # Evaluate the program
@@ -45,7 +44,7 @@ def execute(program):
                 pending.clear()
             else:
                 pending.append(item)
-        else:  # nobreak
+        else:  # no break
             print("Program successfull")
             print("Result", pending)
         print("Finished")
@@ -64,16 +63,3 @@ if __name__ == "__main__":
         operator.mul)))
     execute(program)
 
-# todo byte-programming
-
-# todo object internals
-
-# todo descriptors
-
-# todo instance creation
-
-# todo metaclasses
-
-# todo class decorators
-
-# todo abstract base classes
