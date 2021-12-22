@@ -1,16 +1,17 @@
-import cv2 #import opencv
+#import opencv
+import cv2
 
-faceCascade=cv2.CascadeClassifier("xml/haarcascade_frontalface_default.xml")
+faceCascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 
 #Reading the image as it is
 img=cv2.imread("res/bear.jpg")
 
 #Reading the image as a gray scale
-grayImg=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+gray_img=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 #Search the co-ordinates of the image
 
-faces=faceCascade.detectMultiScale(grayImg,scaleFactor=1.05,minNeighbors=5)
+faces=faceCascade.detectMultiScale(gray_img,scaleFactor=1.05,minNeighbors=5)
 #detectMultiScale method to search for the face rectangle co-ordinates
 #scaleFactor decreases the shape value by %5 until the face is found. Smaller the value, the greater is accuracy
 
