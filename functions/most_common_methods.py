@@ -56,9 +56,9 @@ print(exec('mka="Mustafa Kemal Ataturk"'))
 print(mka)
 
 # The globals() method returns the dictionary of the current global symbol table.
-print(globals())
+# print(globals())
 
 # The locals() method updates and returns a dictionary of the current local symbol table.
-print(locals())
+# print(locals())
 
 # https://python-istihza.yazbel.com/gomulu_fonksiyonlar.html#divmod
