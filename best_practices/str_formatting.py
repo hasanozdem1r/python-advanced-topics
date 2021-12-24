@@ -27,3 +27,13 @@ print(f'Hello {name}')
 born=1881
 died=1938
 print(f'Ataturk died when he was {died-born} and from {datetime.now().year-died} years have passed since his death')
+
+# Template Strings
+from string import Template
+t_obj=Template('Hey, $name')
+data=t_obj.substitute(name=name)
+print(data)
+
+temp_str='Hey $name, there is a $error error!'
+data2=Template(temp_str).substitute(name=name,error=hex(err))
+print(data2)
