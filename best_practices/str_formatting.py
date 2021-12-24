@@ -1,4 +1,6 @@
+from datetime import datetime
 # STRING FORMATTING
+
 
 err = 50159747054
 name = "John Doe"
@@ -13,3 +15,15 @@ print('%x' % err)
 print('Hey %s, there is a 0x%x error!' % (name, err))
 # so complex
 print('Hey %(name)s, there is a 0x%(err)x error!' % {"name": name, "err": err})
+
+# New style String Formatting
+print('Hello {}'.format(name))
+# a bit different
+print('Hey {name}, there is a 0x{err} error!'.format(name=name, err=err))
+
+# Literal String Interpolation (Python 3.6 + )
+print(f'Hello {name}')
+
+born=1881
+died=1938
+print(f'Ataturk died when he was {died-born} and from {datetime.now().year-died} years have passed since his death')
