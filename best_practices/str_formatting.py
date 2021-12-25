@@ -1,4 +1,6 @@
 from datetime import datetime
+from string import Template
+
 # STRING FORMATTING
 
 
@@ -24,16 +26,15 @@ print('Hey {name}, there is a 0x{err} error!'.format(name=name, err=err))
 # Literal String Interpolation (Python 3.6 + )
 print(f'Hello {name}')
 
-born=1881
-died=1938
-print(f'Ataturk died when he was {died-born} and from {datetime.now().year-died} years have passed since his death')
+born = 1881
+died = 1938
+print(f'Ataturk died when he was {died - born} and from {datetime.now().year - died} years have passed since his death')
 
 # Template Strings
-from string import Template
-t_obj=Template('Hey, $name')
-data=t_obj.substitute(name=name)
+t_obj = Template('Hey, $name')
+data = t_obj.substitute(name=name)
 print(data)
 
-temp_str='Hey $name, there is a $error error!'
-data2=Template(temp_str).substitute(name=name,error=hex(err))
+temp_str = 'Hey $name, there is a $error error!'
+data2 = Template(temp_str).substitute(name=name, error=hex(err))
 print(data2)
