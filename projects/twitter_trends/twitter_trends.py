@@ -2,6 +2,7 @@
 Twitter class is created to fetch Twitter Top Trends
 @Hasan Özdemir 2021
 """
+
 # import bs4 and request lib
 from requests import get
 from bs4 import BeautifulSoup
@@ -30,7 +31,7 @@ class Twitter:
         """
         # if user filtered by country
         self.initial_link = filter_by_country(country)
-
+        # get request to the link
         self.content = get(self.initial_link).content
         self.html_content = BeautifulSoup(self.content, 'html.parser')
 
@@ -60,7 +61,14 @@ class Twitter:
         # return
         return trends_df
 
-
 if '__main__' == __name__:
+    print("I called internally")
     twitter_obj = Twitter()
-    twitter_obj.get_top_trends('Russia', limit=10)
+    df=twitter_obj.get_top_trends('Russia', limit=10)
+    print('I worked')
+
+else:
+    print('I called externally')
+    twitter_obj = Twitter()
+    df = twitter_obj.get_top_trends('Russia', limit=10)
+    print(df)
