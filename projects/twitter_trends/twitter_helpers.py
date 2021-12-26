@@ -1,7 +1,8 @@
 """
-Twitter class helpers
+Twitter class helper methods
 @Hasan Özdemir 2021
 """
+
 
 def filter_by_country(country):
     """
