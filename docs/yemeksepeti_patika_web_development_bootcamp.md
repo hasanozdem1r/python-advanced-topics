@@ -9,6 +9,7 @@ This document has been created to inform you about web development topics.
 
 The main aim to understand fundemantal of topics and being able to working within a team and via this bootcamp people will be able to working in a [Yemeksepeti](https://www.yemeksepeti.com/).
 For sure you should show your best :)
+
 Yemeksepeti is a one of the most valuable food delivery company in Turkey.
 
 ## Course Content
@@ -125,13 +126,13 @@ Yemeksepeti is a one of the most valuable food delivery company in Turkey.
     - Full Async 
 
 
-### BOOTCAMP TIMELINE & TUTOR
+## BOOTCAMP TIMELINE & TUTOR
 
 This course is provided by [Mr İbrahim Ediz](https://github.com/ibrahimediz), one of the most successful trainers in the industry
 
-Start  | Finish
-------------- | -------------
-18th December  | 30th January
+| Start Date         | Finish Date       |
+|--------------------|-------------------|
+| 18th December 2021 | 30th January 2022 |
 
 
 
