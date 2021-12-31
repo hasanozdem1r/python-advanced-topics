@@ -35,36 +35,47 @@ print(bark.__name__)
 # Functions Can Be Stored in Data Structures
 funcs = [bark, str.lower, str.capitalize]
 for f in funcs:
-    print(f,f('Hey there !'))
+    print(f, f('Hey there !'))
+
 
 # Functions can be passed to other functions.
 def greet(func):
     greeting = func('Hi, I am a Python program')
     print(greeting)
+
+
 greet(bark)
 # Functions that can accept other functions as arguments are also called higher-order functions.
 # map function
-high_list=list(map(bark,['Hello','hey','hi']))
+high_list = list(map(bark, ['Hello', 'hey', 'hi']))
 print(high_list)
+
 
 # Functions Can Be Nested
 def speak(text):
     print(text)
+
     # inner function
     def whisper(text):
-        if text=='Hello':
+        if text == 'Hello':
             print('Hi')
         else:
             print('Hello')
+
     # inner function call
     whisper(text)
+
+
 speak('Hi')
+
 
 # Functions Can Capture Local State
 def make_adder(n):
     def add(x):
         return x + n
+
     return add
 
+
 plus_3 = make_adder(3)
-print(plus_3(4)) # expected -> 3 + 3
+print(plus_3(4))  # expected -> 3 + 3
