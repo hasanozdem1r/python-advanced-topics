@@ -61,4 +61,26 @@ print(mka)
 # The locals() method updates and returns a dictionary of the current local symbol table.
 # print(locals())
 
-# https://python-istihza.yazbel.com/gomulu_fonksiyonlar.html#divmod
+"""
+The divmod(number1,number2) method return tuple(n1/n2,n1%n2) 
+Method returns result of division and reminder of division
+"""
+print(divmod(10, 2))  # expected (5,0)
+print(divmod(10, 3))  # expected (3,1)
+
+"""
+The enumerate(iterable,start_index) method adds a counter to an iterable and returns it in a form of enumerating object.
+"""
+for index, item in enumerate('Hasan Özdemir'):
+    print(index, item)
+print(list(enumerate('Ankara')))
+
+"""
+The id(object) method return the unique id of given object. The identity of every object in Python is unique.
+"""
+h='Turkey'
+a='Poland'
+print(id(h)==id(h))
+print(id(a)==id(a))
+print(id(a)==id(h))
+
