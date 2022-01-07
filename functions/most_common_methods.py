@@ -155,5 +155,5 @@ print(names[::-1]==list(reversed(names)))
 """
 The sorted(object) sort the list with specific conditions
 """
-print(sorted('Hasan')) # sorted regarding to character position in list
+print(sorted('Hasan')) # sorted regarding character position in list
 print(sorted([i for i in range(10)]))
