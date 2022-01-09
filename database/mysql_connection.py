@@ -1,3 +1,4 @@
+# pip install mysql-connector-python
 import mysql.connector
 from configparser import ConfigParser
 
@@ -10,11 +11,11 @@ user_info = conf_obj["MYSQL_USER_INFO"]
 db_info = conf_obj["MYSQL_DB_CONFIG"]
 
 db_connection = mysql.connector.connect(
-  host="{}".format(db_info["host"]),
-  user="{}".format(user_info["user"]),
-  password="{}".format(user_info['password'])
+    host="{}".format(db_info["host"]),
+    user="{}".format(user_info["user"]),
+    password="{}".format(user_info['password'])
 )
 
-if __name__=='__main__':
-  mysql_obj=db_connection.connect()
-  print('Connected')
+if __name__ == '__main__':
+    mysql_obj = db_connection.connect()
+    print('Connected')
