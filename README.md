@@ -6,20 +6,22 @@ This repository covers below topics
 1. API PRACTICES (Fast API, Wikipedia API)
 2. AUTOMATE BORING STUFFS (Selenium, Linkedin Automation)
 3. COMPREHENSIONS (dict, generator, list, set)
-4. CRUD OPERATIONS (TXT,CSV,XLSX)
-5. DATA STRUCTURES & ALGORITHMS
-6. DATABASE (MYSQL, POSTRE SQL, AMAZON S3)
-7. DECORATORS 101
-8. DOCS (AWS S3 DATA INGESTION, PROJECTS EXPLAINED)
-9. FLOW CONTROL
-10. FUNCTIONS (LAMBDA, NESTED, GENERATORS)
-11. MULTITHREADING
-12. NETWORK FUNDAMENTALS (Basics, Socket API)
-13. OBJECT ORIENTED PROGRAMMING
-14. PROJECTS 
-15. REGULAR EXPRESSIONS
-16. TESTING
-17. WEB SCRAPING (BS4, Requests)
+4. COMPUTER VISION (OPENCV - FACE DETECTION)
+5. CRUD OPERATIONS (TXT,CSV,XLSX)
+6. DATA SCIENCE (PANDAS)
+7. DATA STRUCTURES & ALGORITHMS
+8. DATABASE (MYSQL, POSTRE SQL, AMAZON S3)
+9. DECORATORS 101
+10. DOCS (AWS S3 DATA INGESTION, PROJECTS EXPLAINED)
+11. FLOW CONTROL
+12. FUNCTIONS (LAMBDA, NESTED, GENERATORS, RECURSIVE)
+13. MULTITHREADING
+14. NETWORK FUNDAMENTALS (Basics, Socket API)
+15. OBJECT ORIENTED PROGRAMMING
+16. PROJECTS 
+17. REGULAR EXPRESSIONS
+18. TESTING
+19. WEB SCRAPING (BS4, Requests)
 
 ## Installation
 Open your terminal and write the given command for project installation to your local.
@@ -37,9 +39,10 @@ npm install http-server -g -> run first
 http-server -> run after first line executed
 ```
 ## Acknowledgements
-1. Ýstihza Yazbel (Turkish)
+1. Ä°stihza Yazbel (Turkish)
 2. Python Tricks by Dan Bader (English)
-3. Pluralsight & Coursera
+3. Pluralsight & Coursera (English)
+4. The Hitchhiker's Guide to Python (English)
 
 ## Contributing
 Pull requests are welcome. 
