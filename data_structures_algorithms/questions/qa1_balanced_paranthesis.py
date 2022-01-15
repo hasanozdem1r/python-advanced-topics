@@ -15,26 +15,20 @@ class Brackets:
                 if punctuation_stack[-1]==tokens[punctuation_stack[-2]]:
                     punctuation_stack.remove(punctuation_stack[-1])
                     punctuation_stack.remove(punctuation_stack[-1])
-
         return True if len(punctuation_stack)==0 else False
 
 if __name__ == '__main__':
     test_obj=Brackets()
+    """
+    # False
     print(test_obj.balanced_brackets('('))
-    # [()]{}{[()()]()} -> True
-    print(test_obj.balanced_brackets('[()]{}{[()()]()}'))
-    # {{[[(())]]}}  -> True
+    # {[()]} -> True
+    print(test_obj.balanced_brackets('{[()]}'))
+    # {[(])}  -> False
+    print(test_obj.balanced_brackets('{[(])}'))
+    # {{[[(())]]}} True
     print(test_obj.balanced_brackets('{{[[(())]]}}'))
-    # }([]]][[){}}[[)}[(}(}]{(}[{}][{}](}]}))]{][[}(({(]}[]{[{){{(}}[){[][{[]{[}}[)]}}]{}}(} NO
-    print(test_obj.balanced_brackets('}([]]][[){}}[[)}[(}(}]{(}[{}][{}](}]}))]{][[}(({(]}[]{[{){{(}}[){[][{[]{[}}[)]}}]{}}(}'))
-"""
-( -> ( 
-([ -> ([
-([] -> (
-(] -> (]
-(]( -> (](
-(]() -> (] 
-"""
-"""
-([])
-"""
+    """
+    print(test_obj.balanced_brackets('{}{{}}}}}'))
+    print(test_obj.balanced_brackets('([]())'))
+    # ([]())
