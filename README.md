@@ -1,4 +1,4 @@
-![](docs/static/python advanced topıcs.png)
+![](docs/static/python_advanced_topıcs.png)
 # ADVANCED PYTHON  
 In this repository you will be learning advanced Python topics.  
 <br>
