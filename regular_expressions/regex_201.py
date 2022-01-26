@@ -90,3 +90,5 @@ create_star()
 for i in list3:
     if re.search("^at|at$",i):
         print(i)
+
+#https://python-istihza.yazbel.com/standart_moduller/regex.html#parantez

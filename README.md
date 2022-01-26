@@ -1,4 +1,4 @@
-![](https://ict.iitk.ac.in/wp-content/uploads/advanced-python-ict.png)
+![](docs/static/python advanced topıcs.png)
 # ADVANCED PYTHON  
 In this repository you will be learning advanced Python topics.  
 <br>
