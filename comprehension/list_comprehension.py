@@ -1,6 +1,5 @@
 """
-Comprehensions in Python provide us with a short and concise way to construct
-new sequences (such as lists, set, dictionary etc.) using sequences which have been already defined.
+This script is used to show list comprehension
 """
 
 # create a number list with odd numbers > normal way
