@@ -10,10 +10,10 @@ def filter_by_country(country):
     :param country: <str> Name of country for top trends query
     :return: <str> query link to fetch data
     """
-    if country != '':
+    if country != "":
         country = country.lower()
         # update the query
-        initial_link = f'https://trends24.in//{country}/'
+        initial_link = f"https://trends24.in//{country}/"
         return initial_link
     else:
         # fetch worldwide top trends
@@ -45,9 +45,9 @@ def format_time(trend_time: str) -> str:
     """
     # datatime old format -> dd:mm:yyyy hh:mm:ss
     # datetime new format -> dd:mm:yyyy_hh:mm
-    trend_time = trend_time.replace(' ', '_')[:-3]
+    trend_time = trend_time.replace(" ", "_")[:-3]
     return trend_time
 
 
-if '__main__' == __name__:
-    print('Twitter Helpers Test')
+if "__main__" == __name__:
+    print("Twitter Helpers Test")
