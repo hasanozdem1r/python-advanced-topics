@@ -9,7 +9,6 @@ class Node:
 
 
 class LinkedList:
-
     def __init__(self):
         self.head = None
 
@@ -40,7 +39,7 @@ class LinkedList:
             return
 
         last = self.head
-        while (last.next):
+        while last.next:
             last = last.next
 
         last.next = new_node
@@ -112,12 +111,12 @@ class LinkedList:
     # Print the linked list
     def printList(self):
         temp = self.head
-        while (temp):
+        while temp:
             print(str(temp.data) + " ", end="")
             temp = temp.next
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     llist = LinkedList()
     llist.insertAtEnd(1)
@@ -126,7 +125,7 @@ if __name__ == '__main__':
     llist.insertAtEnd(4)
     llist.insertAfter(llist.head.next, 5)
 
-    print('linked list:')
+    print("linked list:")
     llist.printList()
 
     print("\nAfter deleting an element:")

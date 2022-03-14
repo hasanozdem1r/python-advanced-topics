@@ -8,6 +8,7 @@ This script is created to teach fundamental of Binary Tree
 
 # Binary Tree in Python
 
+
 class Node:
     def __init__(self, key):
         self.left = None
@@ -16,7 +17,7 @@ class Node:
 
     # Traverse preorder
     def traversePreOrder(self):
-        print(self.val, end=' ')
+        print(self.val, end=" ")
         if self.left:
             self.left.traversePreOrder()
         if self.right:
@@ -26,7 +27,7 @@ class Node:
     def traverseInOrder(self):
         if self.left:
             self.left.traverseInOrder()
-        print(self.val, end=' ')
+        print(self.val, end=" ")
         if self.right:
             self.right.traverseInOrder()
 
@@ -36,7 +37,7 @@ class Node:
             self.left.traversePostOrder()
         if self.right:
             self.right.traversePostOrder()
-        print(self.val, end=' ')
+        print(self.val, end=" ")
 
 
 root = Node(1)

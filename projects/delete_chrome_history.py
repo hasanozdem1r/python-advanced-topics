@@ -1,12 +1,15 @@
 import sqlite3
 from os import getlogin
+
 # establish the connection with
 # history database file which is
 # located at given location
 # you can search in your system
 # for that location and provide
 # the path here
-conn = sqlite3.connect(f"C:\\Users\\{getlogin()}\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History")
+conn = sqlite3.connect(
+    f"C:\\Users\\{getlogin()}\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\History"
+)
 
 # point out at the cursor
 c = conn.cursor()
@@ -33,8 +36,10 @@ while result:
 
     # we will go through our database and
     # search for the given keyword
-    for rows in c.execute("SELECT id,url FROM urls\
-	WHERE url LIKE '%google%'"):
+    for rows in c.execute(
+        "SELECT id,url FROM urls\
+	WHERE url LIKE '%google%'"
+    ):
         # this is just to check all
         # the urls that are being deleted
         print(rows)
@@ -49,7 +54,7 @@ while result:
     # execute many command which is delete
     # from urls (this is the table)
     # where id is ids (list having all the urls)
-    c.executemany('DELETE from urls WHERE id = ?', ids)
+    c.executemany("DELETE from urls WHERE id = ?", ids)
 
     # commit the changes
     conn.commit()

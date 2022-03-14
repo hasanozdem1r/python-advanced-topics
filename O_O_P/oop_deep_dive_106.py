@@ -14,35 +14,39 @@ class A(object):
     def do_your_stuff(self):
         print("doing A's stuff")
 
+
 class B(A):
     def do_your_stuff(self):
         A.do_your_stuff(self)
         print("doing B's stuff")
+
 
 class C(A):
     def do_your_stuff(self):
         A.do_your_stuff(self)
         print("doing C's stuff")
 
-class D(B,C):
+
+class D(B, C):
     def do_your_stuff(self):
         B.do_your_stuff(self)
         C.do_your_stuff(self)
         print("doing D's stuff")
 
-if __name__=='__main__':
+
+if __name__ == "__main__":
     # a instance
-    a_obj=A()
+    a_obj = A()
     a_obj.do_your_stuff()
-    print('*'*50)
+    print("*" * 50)
     # b instance
-    b_obj=B()
+    b_obj = B()
     b_obj.do_your_stuff()
-    print('*'*50)
+    print("*" * 50)
     # c instance
-    c_obj=C()
+    c_obj = C()
     c_obj.do_your_stuff()
-    print('*'*50)
+    print("*" * 50)
     # d instance
-    d_obj=D()
+    d_obj = D()
     d_obj.do_your_stuff()

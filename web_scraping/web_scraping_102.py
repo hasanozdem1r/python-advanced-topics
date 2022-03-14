@@ -1,6 +1,7 @@
-import  requests
+import requests
 from bs4 import BeautifulSoup
-wordpress_html=requests.get("https://en-gb.wordpress.org/plugins/browse/popular/")
+
+wordpress_html = requests.get("https://en-gb.wordpress.org/plugins/browse/popular/")
 
 """
 Extract Information with BS4
@@ -14,12 +15,12 @@ Why not regular expressions ?
 PAGE = "http://localhost:8080/auto_mpg.html"
 
 # it will send get request to given address
-page_result=requests.get(PAGE)
+page_result = requests.get(PAGE)
 
 # it will keep result
-page_source=page_result.text
+page_source = page_result.text
 
-parse_webpage=BeautifulSoup(page_source,"html.parser")
+parse_webpage = BeautifulSoup(page_source, "html.parser")
 
 print(parse_webpage.title.getText())
 
@@ -27,11 +28,11 @@ print(parse_webpage.title.getText())
 print(parse_webpage.body.get_text()[:1000])
 
 # find_all
-div=parse_webpage.find_all('div', class_='car_block')[0]
+div = parse_webpage.find_all("div", class_="car_block")[0]
 print(div.prettify())
 
 # copy element selector from Chrome Developer Tools and practice
-div_selector=parse_webpage.select("#car-1 > span.mpg")
+div_selector = parse_webpage.select("#car-1 > span.mpg")
 print(div_selector)
 
 """

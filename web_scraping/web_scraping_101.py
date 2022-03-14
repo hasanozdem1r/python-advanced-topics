@@ -32,19 +32,16 @@ Processing Offline ; More complex, great for larger volumes, use for engineered 
 import requests
 import bs4
 
-result_wordpress=requests.get("https://en-gb.wordpress.org/plugins/browse/popular/")
+result_wordpress = requests.get("https://en-gb.wordpress.org/plugins/browse/popular/")
 
 # Processing Offline
-with open("wordpress.html","w") as file_wordpress:
+with open("wordpress.html", "w") as file_wordpress:
     file_wordpress.write(result_wordpress.text)
 
 # Processing Online
-result_hansard=requests.get("https://hansard.parliament.uk/search/Members?house=commons&currentFormerFilter=1")
+result_hansard = requests.get(
+    "https://hansard.parliament.uk/search/Members?house=commons&currentFormerFilter=1"
+)
 
-with open("hansard.html","w") as file_hansard:
+with open("hansard.html", "w") as file_hansard:
     file_hansard.write(result_hansard.text)
-
-
-
-
-

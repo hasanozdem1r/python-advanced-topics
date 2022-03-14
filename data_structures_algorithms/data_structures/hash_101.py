@@ -1,12 +1,16 @@
 # Python program to demonstrate working of HashTable
 from math import sqrt
-hashTable = [[],] * 10
+
+hashTable = [
+    [],
+] * 10
+
 
 def checkPrime(n):
     if n == 1 or n == 0:
         return 0
 
-    for i in range(2, int(sqrt(n))+1):
+    for i in range(2, int(sqrt(n)) + 1):
         if n % i == 0:
             return 0
 
@@ -32,9 +36,11 @@ def insertData(key, data):
     index = hashFunction(key)
     hashTable[index] = [key, data]
 
+
 def removeData(key):
     index = hashFunction(key)
     hashTable[index] = 0
+
 
 insertData(123, "apple")
 insertData(432, "mango")

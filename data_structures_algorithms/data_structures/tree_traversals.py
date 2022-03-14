@@ -13,7 +13,7 @@ def inorder(root):
         # Traverse left
         inorder(root.left)
         # Traverse root
-        print(str(root.val) + "->", end='')
+        print(str(root.val) + "->", end="")
         # Traverse right
         inorder(root.right)
 
@@ -26,14 +26,14 @@ def postorder(root):
         # Traverse right
         postorder(root.right)
         # Traverse root
-        print(str(root.val) + "->", end='')
+        print(str(root.val) + "->", end="")
 
 
 def preorder(root):
 
     if root:
         # Traverse root
-        print(str(root.val) + "->", end='')
+        print(str(root.val) + "->", end="")
         # Traverse left
         preorder(root.left)
         # Traverse right

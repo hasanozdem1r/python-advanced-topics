@@ -4,7 +4,7 @@
 import heapq as hq
 
 # convert array to heap
-ar=[3,5,1,2,6,8,7]
+ar = [3, 5, 1, 2, 6, 8, 7]
 hq.heapify(ar)
 print(ar)
 
@@ -13,6 +13,5 @@ hq.heappop(ar)
 print(ar)
 
 # push element
-hq.heappush(ar,4)
+hq.heappush(ar, 4)
 print(ar)
-

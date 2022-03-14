@@ -5,8 +5,13 @@ def fun1(): # enclosing function
         #things
     fun2_result=fun2()
 """
+
+
 def print_hello():
     def hello():
-        print('Hello')
+        print("Hello")
+
     return hello()
+
+
 print_hello()

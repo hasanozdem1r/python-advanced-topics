@@ -81,10 +81,10 @@ def play():
         actions = {
             "N": go_north,
             "E": go_east,
-            'S': go_south,
-            'W': go_west,
-            'L': look,
-            'Q': quit,
+            "S": go_south,
+            "W": go_west,
+            "L": look,
+            "Q": quit,
         }
         try:
             command_action = actions[conmmand]

@@ -5,8 +5,10 @@ def fib():
         yield a
         a, b = b, a + b
 
+
 # testing code
 import types
+
 if type(fib()) == types.GeneratorType:
     print("Good, The fib function is a generator.")
 

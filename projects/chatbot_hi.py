@@ -16,54 +16,83 @@ for i,k in enumerate(reflections):
 set_pairs = [
     [
         r"my name is (.*)",
-        ["Hello %1, How are you doing today ?",]
+        [
+            "Hello %1, How are you doing today ?",
+        ],
     ],
     [
         r"hi|hey|hello",
-        ["Hello", "Hey there",]
+        [
+            "Hello",
+            "Hey there",
+        ],
     ],
     [
         r"what is your name?",
-        ["You can call me a chatbot ?",]
+        [
+            "You can call me a chatbot ?",
+        ],
     ],
     [
         r"how are you ?",
-        ["I am fine, thank you! How can i help you?",]
+        [
+            "I am fine, thank you! How can i help you?",
+        ],
     ],
     [
         r"I am fine, thank you",
-        ["great to hear that, how can i help you?",]
+        [
+            "great to hear that, how can i help you?",
+        ],
     ],
     [
         r"how can i help you? ",
-        ["i am looking for online guides and courses to learn data science, can you suggest?", "i am looking for data science training platforms",]
+        [
+            "i am looking for online guides and courses to learn data science, can you suggest?",
+            "i am looking for data science training platforms",
+        ],
     ],
     [
         r"i'm (.*) doing good",
-        ["That's great to hear","How can i help you?:)",]
+        [
+            "That's great to hear",
+            "How can i help you?:)",
+        ],
     ],
     [
         r"i am looking for online guides and courses to learn data science, can you suggest?",
-        ["Pluralsight is a great option to learn data science. You can check their website",]
+        [
+            "Pluralsight is a great option to learn data science. You can check their website",
+        ],
     ],
     [
         r"thanks for the suggestion. do they have great authors and instructors?",
-        ["Yes, they have the world class best authors, that is their strength;)",]
+        [
+            "Yes, they have the world class best authors, that is their strength;)",
+        ],
     ],
     [
         r"(.*) thank you so much, that was helpful",
-        ["Iam happy to help", "No problem, you're welcome",]
+        [
+            "Iam happy to help",
+            "No problem, you're welcome",
+        ],
     ],
     [
         r"quit",
-    ["Bye, take care. See you soon :) ","It was nice talking to you. See you soon :)"]
-],
+        [
+            "Bye, take care. See you soon :) ",
+            "It was nice talking to you. See you soon :)",
+        ],
+    ],
 ]
 
 # After creating the pairs of rules above, we define the chatbot using the code below
 # this is starter message for chatbot.
 def chatbot():
     print("Hi BOSS, I'm the Chat Bot")
+
+
 chatbot()
 
 

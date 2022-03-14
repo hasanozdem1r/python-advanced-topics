@@ -17,5 +17,5 @@ This means a lambda function can’t use statements or annotations—not even a 
 Executing a lambda function evaluates its expression and then automatically returns
 the expression’s result, so there’s always an implicit return statement.
 """
-tuples = [(1, 'd'), (2, 'b'), (4, 'a'), (3, 'c')]
+tuples = [(1, "d"), (2, "b"), (4, "a"), (3, "c")]
 print(sorted(tuples, key=lambda x: x[0]))

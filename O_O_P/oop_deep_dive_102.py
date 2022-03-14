@@ -4,7 +4,6 @@ The newly formed class is a derived class (or child class). Similarly, the exist
 """
 # parent class
 class Bird:
-
     def __init__(self):
         print("Bird is ready | BIRD CLASS")
 
@@ -17,7 +16,6 @@ class Bird:
 
 # child class
 class Penguin(Bird):
-
     def __init__(self):
         # call super() function
         super().__init__()

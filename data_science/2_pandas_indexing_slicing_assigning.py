@@ -8,7 +8,7 @@ import pandas as pd
 draw_star = lambda: print(50 * "*")
 
 # Reading data files
-df_farmers = pd.read_csv('datasets/farmers_markets_from_usda.csv')
+df_farmers = pd.read_csv("datasets/farmers_markets_from_usda.csv")
 dataset_cols = list(df_farmers.columns)
 
 # accessing by columns
@@ -52,7 +52,7 @@ We can manipulate the index in any way we see fit.
 """
 # The set_index() method can be used to do the job.
 df_farmers.set_index("FMID")
-print('Successfully index is set')
+print("Successfully index is set")
 draw_star()
 # Conditional Selection
 print(df_farmers.FMID == 1018261)  # 1st way
@@ -61,9 +61,19 @@ print(df_farmers.loc[df_farmers.FMID == 1018261])  # 2nd way
 draw_star()
 # Conditional multiple selection with AND / OR operator
 # AND operation
-print(df_farmers.loc[(df_farmers.FMID == 1018261) & (df_farmers.MarketName == "Stearns Homestead Farmers' Market")])
+print(
+    df_farmers.loc[
+        (df_farmers.FMID == 1018261)
+        & (df_farmers.MarketName == "Stearns Homestead Farmers' Market")
+    ]
+)
 # OR operation
-print(df_farmers.loc[(df_farmers.FMID == 1018261) | (df_farmers.MarketName == "Stearns Homestead Farmers' Market")])
+print(
+    df_farmers.loc[
+        (df_farmers.FMID == 1018261)
+        | (df_farmers.MarketName == "Stearns Homestead Farmers' Market")
+    ]
+)
 draw_star()
 """
 The isin built-in selector is lets you select data whose value "is in" a list of values.

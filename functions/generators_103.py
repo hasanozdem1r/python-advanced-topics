@@ -11,17 +11,19 @@ Differences between Generator function and Normal function
 # A simple generator function
 def my_gen():
     n = 1
-    print('This is printed first')
+    print("This is printed first")
     # Generator function contains yield statements
     yield n
 
     n += 1
-    print('This is printed second')
+    print("This is printed second")
     yield n
 
     n += 1
-    print('This is printed at last')
+    print("This is printed at last")
     yield n
+
+
 """
 a=my_gen()
 next(a)
@@ -50,4 +52,3 @@ generator = (x**2 for x in my_list)
 
 print(list_)
 print(generator)
-

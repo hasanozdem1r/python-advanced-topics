@@ -9,33 +9,37 @@ sions in docstrings, and then executes those sessions to verify that they work e
 as shown
 """
 
+
 def square(x):
-     """Squares x.
-     >>> square(2)
-     4
-     >>> square(-2)
-     4
-     >>> square(-3)
-     9
-     """
-     return x * x
+    """Squares x.
+    >>> square(2)
+    4
+    >>> square(-2)
+    4
+    >>> square(-3)
+    9
+    """
+    return x * x
+
 
 def triple(x):
     """Triples x.
-     >>> triple(3)
-     9
-     >>> triple(4)
-     12
-     >>> triple(-3)
-     -9
+    >>> triple(3)
+    9
+    >>> triple(4)
+    12
+    >>> triple(-3)
+    -9
     """
-    return x*3
+    return x * 3
+
 
 """
 Doctests serve a different purpose than proper unit tests. They are usually less
 detailed and don’t catch special cases or obscure regression bugs. They are useful for happy path.
 """
 
-if __name__ == '__main__':
- import doctest
- doctest.testmod()
+if __name__ == "__main__":
+    import doctest
+
+    doctest.testmod()

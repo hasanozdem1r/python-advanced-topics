@@ -26,7 +26,7 @@ class FibonacciHeap:
     def insert_node(self, value):
         new_tree = FibonacciTree(value)
         self.trees.append(new_tree)
-        if (self.least is None or value < self.least.value):
+        if self.least is None or value < self.least.value:
             self.least = new_tree
         self.count = self.count + 1
 
@@ -72,8 +72,7 @@ class FibonacciHeap:
         for k in aux:
             if k is not None:
                 self.trees.append(k)
-                if (self.least is None
-                        or k.value < self.least.value):
+                if self.least is None or k.value < self.least.value:
                     self.least = k
 
 
@@ -88,6 +87,6 @@ fibonacci_heap.insert_node(3)
 fibonacci_heap.insert_node(17)
 fibonacci_heap.insert_node(24)
 
-print('the minimum value of the fibonacci heap: {}'.format(fibonacci_heap.get_min()))
+print("the minimum value of the fibonacci heap: {}".format(fibonacci_heap.get_min()))
 
-print('the minimum value removed: {}'.format(fibonacci_heap.extract_min()))
+print("the minimum value removed: {}".format(fibonacci_heap.extract_min()))

@@ -1,17 +1,16 @@
-
 class User:
-    #User class constructor
-    def __init__(self,username,full_name,email,password):
+    # User class constructor
+    def __init__(self, username, full_name, email, password):
         """
         :param username: <str>
         :param full_name: <str>
         :param email:  <str>
         :param password: <str>
         """
-        self._username=username
-        self._full_name=full_name
-        self._email=email
-        self.password=password
+        self._username = username
+        self._full_name = full_name
+        self._email = email
+        self.password = password
 
     def get_username(self):
         """
@@ -19,13 +18,13 @@ class User:
         """
         return self._username
 
-    def set_username(self,username):
+    def set_username(self, username):
         """
 
         :param username: <str> User's username
         :return: None
         """
-        self._username=username
+        self._username = username
 
     def get_full_name(self):
         """
@@ -54,4 +53,3 @@ class User:
         :return: None
         """
         self._email = email
-
