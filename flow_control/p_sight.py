@@ -1,7 +1,7 @@
 """
 Python script to understand fundamentals of ZIP function
 
-@ Hasan Özdemir 2021
+@ Hasan Ozdemir 2021
 """
 
 # while .. else in practice -> evaluating stack programs
@@ -53,13 +53,17 @@ def execute(program):
 if __name__ == "__main__":
     import operator
 
-    program = list(reversed((
-        "#A short stack program to add",
-        " and multiply some constants",
-        5,
-        2,
-        operator.add,
-        3,
-        operator.mul)))
+    program = list(
+        reversed(
+            (
+                "#A short stack program to add",
+                " and multiply some constants",
+                5,
+                2,
+                operator.add,
+                3,
+                operator.mul,
+            )
+        )
+    )
     execute(program)
-

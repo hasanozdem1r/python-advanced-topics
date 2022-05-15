@@ -11,12 +11,13 @@ class Tractor:
         self.cylinder = cylinder
         self.km = km
 
-
     def __str__(self):
         return f"{self.horse_power} - {self.model} - {self.cylinder} - {self.km}"
 
     def __repr__(self):
         return f"{self.horse_power} - {self.model} - {self.cylinder} - {self.km}"
-if __name__=="__main__":
-    fiat_obj=Tractor(horse_power=64,model=1982,cylinder=3,km=1000)
+
+
+if __name__ == "__main__":
+    fiat_obj = Tractor(horse_power=64, model=1982, cylinder=3, km=1000)
     print(fiat_obj)
