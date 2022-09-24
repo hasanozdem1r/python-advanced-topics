@@ -8,6 +8,9 @@ authors = ["hasanozdem1r <hasanozdemir1@trakya.edu.tr>"]
 python = "^3.8"
 dask = "^2022.6.1"
 pre-commit = "^2.20.0"
+backoff = "^2.1.2"
+requests = "^2.28.1"
+python-dotenv = "^0.21.0"
 
 [tool.poetry.dev-dependencies]
 
