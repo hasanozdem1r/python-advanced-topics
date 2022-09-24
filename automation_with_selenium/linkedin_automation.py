@@ -30,29 +30,28 @@ class Linkedin(object):
         sleep(3)
         # click login
         self.browser.find_element_by_xpath(
-            '//*[@id="organic-div"]/form/div[3]/button'
-        ).click()
+            '//*[@id="organic-div"]/form/div[3]/button').click()
         sleep(1)
         # redirect to companies you followed page
-        self.browser.get("https://www.linkedin.com/feed/following/?filterType=company")
+        self.browser.get(
+            "https://www.linkedin.com/feed/following/?filterType=company")
         sleep(2)
         companies = list()
         # scroll page to see all companies in dynamic HTML
         SCROLL_PAUSE_TIME = 0.5
-        last_height = self.browser.execute_script("return document.body.scrollHeigh")
+        last_height = self.browser.execute_script(
+            "return document.body.scrollHeigh")
         while True:
             # scroll down to bottom
             self.browser.execute_script(
-                "window.scrollTo(0, document.body.scrollHeight);"
-            )
+                "window.scrollTo(0, document.body.scrollHeight);")
 
             # wait to load page
             sleep(SCROLL_PAUSE_TIME)
 
             # Calculate new scroll height and compare with last scroll height
             new_height = self.browser.execute_script(
-                "return document.body.scrollHeight"
-            )
+                "return document.body.scrollHeight")
             if new_height == last_height:
                 break
             last_height = new_height
@@ -65,9 +64,8 @@ class Linkedin(object):
         )
         # unfollow all companies
         for company in companies:
-            webdriver.ActionChains(self.browser).move_to_element(company).click(
-                company
-            ).perform()
+            webdriver.ActionChains(
+                self.browser).move_to_element(company).click(company).perform()
             sleep(1)
 
 

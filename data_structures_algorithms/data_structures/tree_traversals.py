@@ -1,6 +1,7 @@
 # Tree traversal in Python
 # References : programiz.com
 class Node:
+
     def __init__(self, item):
         self.left = None
         self.right = None

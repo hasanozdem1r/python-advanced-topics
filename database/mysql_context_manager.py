@@ -13,6 +13,7 @@ from pandas import (
 
 
 class MySqlCrud:
+
     def __init__(self, usr: str, pwd: str, hst: str) -> None:
         """
         MySqlCrud class constructor used to initialize database setups
@@ -32,9 +33,10 @@ class MySqlCrud:
         :return: None
         """
         # instantiate connection obj __init__ method
-        connection_obj = connect(
-            host=self.host, user=self.user, password=self.password, database=database
-        )
+        connection_obj = connect(host=self.host,
+                                 user=self.user,
+                                 password=self.password,
+                                 database=database)
         try:
             # connect to db __enter__ method
             yield connection_obj
@@ -48,9 +50,8 @@ class MySqlCrud:
             # close connection __exit__ method
             connection_obj.close()
 
-    def read_data_from_db(
-        self, database: str, table_name: str, output_format
-    ) -> (DataFrame or list or None):
+    def read_data_from_db(self, database: str, table_name: str,
+                          output_format) -> (DataFrame or list or None):
         """
         This method is created to fetch data from databases with support of context managers
         :param database: <str> Name of database to fetch data
@@ -63,8 +64,8 @@ class MySqlCrud:
             if output_format == DataFrame:
                 # get data as dataframe
                 query_data: DataFrame = read_sql(
-                    sql=f"SELECT * FROM {database}.{table_name};", con=connection
-                )
+                    sql=f"SELECT * FROM {database}.{table_name};",
+                    con=connection)
                 return query_data
             elif output_format == list:
                 cursor_obj = connection.cursor()

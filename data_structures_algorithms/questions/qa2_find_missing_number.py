@@ -13,11 +13,9 @@ def find_missing_number(numbers: list):
     print(int(expected_sum - actual_sum))
 
 
-find_missing_number(
-    [
-        1,
-        2,
-        3,
-        5,
-    ]
-)
+find_missing_number([
+    1,
+    2,
+    3,
+    5,
+])

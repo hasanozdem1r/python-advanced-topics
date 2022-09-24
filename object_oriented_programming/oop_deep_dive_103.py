@@ -6,6 +6,7 @@ In Python, we denote private attributes using underscore as the prefix i.e singl
 
 
 class Computer:
+
     def __init__(self):
         self.__maxprice = 900
 

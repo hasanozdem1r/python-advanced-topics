@@ -1,4 +1,5 @@
 class Stack:
+
     def __init__(self, stack: list, capacity: int) -> None:
         """
         Initialize stack

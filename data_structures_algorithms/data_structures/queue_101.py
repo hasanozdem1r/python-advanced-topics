@@ -1,4 +1,5 @@
 class Queue:
+
     def __init__(self, queue: list, capacity: int) -> None:
         """
         Initialize queue

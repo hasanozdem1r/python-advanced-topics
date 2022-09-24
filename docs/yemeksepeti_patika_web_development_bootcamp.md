@@ -55,15 +55,15 @@ Yemeksepeti is a one of the most valuable food delivery company in Turkey.
 ### Week 4 | Using Databases with Python
 
 - Getting Started with SQL
-- Introduction to MongoDB 
+- Introduction to MongoDB
 - Introduction to RDBM and Tables
 - Intermediate SQL
-- Accessing Databases using Python 
+- Accessing Databases using Python
 
 ### Week 5 | Web Programming with Flask
 
 - Templates (PART 1)
-    - Web Forms 
+    - Web Forms
     - Database
     - User Logins
     - Profile Page and avatars
@@ -74,7 +74,7 @@ Yemeksepeti is a one of the most valuable food delivery company in Turkey.
     - Facelift
     - Dates and Times
     - Ajax
-    - Deployment (Heroku- Docker) 
+    - Deployment (Heroku- Docker)
     - REST Architecture
 - REST APIs and Web Services (PART 2)
     - HTTP Methods
@@ -82,7 +82,7 @@ Yemeksepeti is a one of the most valuable food delivery company in Turkey.
     - API Endpoints
     - REST and Python: Consuming APIs
 
-### Week 6 | Python  & REST API  
+### Week 6 | Python  & REST API
 
 - REST and Python: Building APIs (PART 1)
     - Identify Resources
@@ -116,15 +116,15 @@ Yemeksepeti is a one of the most valuable food delivery company in Turkey.
     - Raising Errors
     - Testing for Expected Errors
 - Introduction to Asynchronous Programming  (PART 2)
-    - How Does async/await Work? 
-    - Serial Crawler 
+    - How Does async/await Work?
+    - Serial Crawler
     - Gevent
-    - tornado 
+    - tornado
     - aiohttp
 - Shared CPU–I/O Workload  (PART 3)
-    - Serial 
-    - Batched Results 
-    - Full Async 
+    - Serial
+    - Batched Results
+    - Full Async
 
 
 ## BOOTCAMP TIMELINE & TUTOR

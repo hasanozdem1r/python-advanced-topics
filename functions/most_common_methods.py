@@ -2,7 +2,6 @@
 Most common Python built in methods
 @Hasan Ozdemir 2021
 """
-
 """
 Let's assume that we have numbers list [1,2,3,4,5,-1,-2,-3,-4,-5] and we want to convert all to positive numbers.
 abs(number) method used for this purpose
@@ -21,31 +20,26 @@ For ex : 1.5 is equal to 1 and 2 and return is 2
 rounded_nums = [round(num) for num in numbers2]
 print(numbers2)
 print(rounded_nums)
-
 """
-all(list) method is used to determine list items are true or false and return the items. 
+all(list) method is used to determine list items are true or false and return the items.
 If all items are true all() returns true if one even is false function return false
 """
 print(all(rounded_nums))
-
 """
-any(list) is used to specify is there any True item in a list. 
-If even is there 1 item is True method returns True neither returns False 
+any(list) is used to specify is there any True item in a list.
+If even is there 1 item is True method returns True neither returns False
 """
 print(any(rounded_nums))
-
 """
 The repr() function returns the string representation of the value passed to eval function by default
 """
 print(repr("Hasan Ozdemir"))
-
 """
 The eval() method parses the expression passed to this method and runs python expression (code) within the program.
 eval(expression, globals=None, locals=None)
 """
 print(eval("5+25"))
 print(eval("12+5+45+75"))
-
 """
 The exec() method executes the dynamically created program, which is either a string or a code object.
 exec(object, globals, locals)
@@ -60,21 +54,18 @@ print(mka)
 
 # The locals() method updates and returns a dictionary of the current local symbol table.
 # print(locals())
-
 """
-The divmod(number1,number2) method return tuple(n1/n2,n1%n2) 
+The divmod(number1,number2) method return tuple(n1/n2,n1%n2)
 Method returns result of division and reminder of division
 """
 print(divmod(10, 2))  # expected (5,0)
 print(divmod(10, 3))  # expected (3,1)
-
 """
 The enumerate(iterable,start_index) method adds a counter to an iterable and returns it in a form of enumerating object.
 """
 for index, item in enumerate("Hasan Özdemir"):
     print(index, item)
 print(list(enumerate("Ankara")))
-
 """
 The id(object) method return the unique id of given object. The identity of every object in Python is unique.
 """
@@ -83,7 +74,6 @@ a = "Poland"
 print(id(h) == id(h))
 print(id(a) == id(a))
 print(id(a) == id(h))
-
 """
 The format(object) method is used to format the given data.
 """
@@ -112,7 +102,7 @@ def filter_note(note):
 
 print(*filter(filter_note, notes.values()))
 """
-The hash(object) method returns the hash value of an object if it has one. 
+The hash(object) method returns the hash value of an object if it has one.
 Hash values are just integers that are used to compare dictionary keys during a dictionary look quickly.
 """
 text = "Fucking Covid 19"
@@ -138,29 +128,24 @@ def square(num):
 squared_iterator = map(square, [i for i in range(1, 11)])
 squared_list = list(squared_iterator)
 print(squared_list)
-
 """
 The max(object) returns maximum item from the list.
 """
 print(max([i for i in range(1000, 1, -1)]))
-
 """
 The min(object) returns minimum item from the list.
 """
 print(min([i for i in range(1000, 1, -1)]))
-
 """
-The pow(object1,object2) returns the power of the base. It's work like base**power 
+The pow(object1,object2) returns the power of the base. It's work like base**power
 """
 print(pow(4, 2))
-
 """
 The reversed(object) method reverse the given list
 """
 names = ["ahmet", "mehmet", "veli", "ayşe", "çiğdem", "ışık"]
 print(list(reversed(names)))
 print(names[::-1] == list(reversed(names)))
-
 """
 The sorted(object) sort the list with specific conditions
 """

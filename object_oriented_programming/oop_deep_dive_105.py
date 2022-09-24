@@ -1,4 +1,5 @@
 class Vehicle:
+
     def __init__(self, model, brand):
         self.model = model
         self.brand = brand
@@ -6,12 +7,14 @@ class Vehicle:
 
 
 class SedanCar(Vehicle):
+
     def __init__(self):
         super(SedanCar, self).__init__()
         self.number_of_door = 4
 
 
 class CoupeCar(Vehicle):
+
     def __init__(self):
         # super(CoupeCar, self).__init__()
         super().__init__()

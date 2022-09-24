@@ -8,6 +8,7 @@ import pytesseract
 
 
 class PhoneNumbers:
+
     def fetch_phone_numbers(self, folder_path):
         """
         This method is used to fetch phone numbers from image or screenshots.
@@ -18,9 +19,10 @@ class PhoneNumbers:
         phone_numbers: list = list()
         #  ocr path must be updated regarding your own ocr engine path
         pytesseract.pytesseract.tesseract_cmd = (
-            r"C:/Program Files/tesseract-ocr/tesseract.exe"
-        )
-        files = [f for f in listdir(folder_path) if isfile(join(folder_path, f))]
+            r"C:/Program Files/tesseract-ocr/tesseract.exe")
+        files = [
+            f for f in listdir(folder_path) if isfile(join(folder_path, f))
+        ]
         for file in files:
             full_path = f"{folder_path}/{file}"
             try:

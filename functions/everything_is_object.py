@@ -12,13 +12,12 @@ def yell(text):
 print(yell("Hello"))
 # assign to a variable
 """
-This line doesn’t call the function. 
-It takes the function object referenced by yell and creates a second name, 
+This line doesn’t call the function.
+It takes the function object referenced by yell and creates a second name,
 bark, that points to it.
 """
 bark = yell
 print(bark("woof"))
-
 """
 You can delete the function’s original name (yell). Since
 another name (bark) still points to the underlying function
@@ -71,6 +70,7 @@ speak("Hi")
 
 # Functions Can Capture Local State
 def make_adder(n):
+
     def add(x):
         return x + n
 

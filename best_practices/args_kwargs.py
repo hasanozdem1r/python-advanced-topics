@@ -2,6 +2,8 @@
 This script is aimed to show usage of args and kwargs
 @Hasan Ozdemir 05-13-2022
 """
+
+
 # args : positional arguments
 # kwargs: keyword arguments
 def args_kwargs_101(required: str, *args, **kwargs) -> None:

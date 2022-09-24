@@ -3,7 +3,6 @@ from string import Template
 
 # STRING FORMATTING
 
-
 err = 50159747054
 name = "John Doe"
 

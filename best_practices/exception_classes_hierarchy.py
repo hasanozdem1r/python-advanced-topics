@@ -22,9 +22,6 @@ class NameTooCuteError(BaseValidationError):  # Z Exception
 
 """
 All this exceptions are user defined.
-NameTooLongError, NameTooShortError, NameTooCuteError are derived from BaseValidationError so because of that 
+NameTooLongError, NameTooShortError, NameTooCuteError are derived from BaseValidationError so because of that
 BaseValidationError act like Exception class. Catch all errors.
 """
-
-
-

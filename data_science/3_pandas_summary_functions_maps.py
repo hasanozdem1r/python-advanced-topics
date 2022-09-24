@@ -33,7 +33,7 @@ draw_star()
 """
 A map is a term, borrowed from mathematics, for a function that takes
 one set of values and "maps" them to another set of values
-In data science we often have a need for creating new representations from existing data, 
+In data science we often have a need for creating new representations from existing data,
 or for transforming data from the format it is in now to the format that we want it to be in later.
 """
 df_x_mean = df_farmers.x.mean()

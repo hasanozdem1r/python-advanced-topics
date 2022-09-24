@@ -2,7 +2,8 @@ from requests import get
 from bs4 import BeautifulSoup
 
 
-def currency_calculate(rate_of_currency: float, amount_of_money: float) -> float:
+def currency_calculate(rate_of_currency: float,
+                       amount_of_money: float) -> float:
     """
     This method is used to convert TRY to EURO
     :rate: <float>  rate of currency

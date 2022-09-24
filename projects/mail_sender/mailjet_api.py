@@ -9,6 +9,7 @@ from re import compile, fullmatch
 
 
 class EmailHelper:
+
     def is_email_valid(self, email_to: str) -> bool:
         """
         This method used to check validation of given email which is in that format
@@ -16,8 +17,7 @@ class EmailHelper:
         :return:<bool> Valid or Invalid
         """
         regex = compile(
-            r"([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+"
-        )
+            r"([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+")
         if fullmatch(regex, email_to):
             return True
         else:
@@ -36,6 +36,7 @@ class EmailHelper:
 
 
 class Email(EmailHelper):
+
     def __init__(self, api_key: str, api_secret: str) -> None:
         """
         Initialize mailjet object with api_key and api_secret for further mail send usage
@@ -63,11 +64,9 @@ class Email(EmailHelper):
         :return: <bool> Mail successfully sent or not
         """
         # inherited from EmailHelper class to check internet connection and mail validation
-        if (
-            not self.is_email_valid(mail_to)
-            and not self.check_internet_connection()
-            and not self.is_email_valid(mail_from)
-        ):
+        if (not self.is_email_valid(mail_to) and
+                not self.check_internet_connection() and
+                not self.is_email_valid(mail_from)):
             return False
         else:
             # read template mail from html file
@@ -75,16 +74,20 @@ class Email(EmailHelper):
                 data = mail_template.read()
             # initialize mail object
             mail_details = {
-                "Messages": [
-                    {
-                        "From": {"Email": f"{mail_from}", "Name": f"{sender_name}"},
-                        "To": [{"Email": f"{mail_to}", "Name": f"{receiver_name}"}],
-                        "Subject": f"{mail_subject}",
-                        "TextPart": "My first Mailjet email",
-                        "HTMLPart": f"{data}",
-                        "CustomID": "AppGettingStartedTest",
-                    }
-                ]
+                "Messages": [{
+                    "From": {
+                        "Email": f"{mail_from}",
+                        "Name": f"{sender_name}"
+                    },
+                    "To": [{
+                        "Email": f"{mail_to}",
+                        "Name": f"{receiver_name}"
+                    }],
+                    "Subject": f"{mail_subject}",
+                    "TextPart": "My first Mailjet email",
+                    "HTMLPart": f"{data}",
+                    "CustomID": "AppGettingStartedTest",
+                }]
             }
             # send mail to receiver
             result = self.mailjet_obj.send.create(data=mail_details)

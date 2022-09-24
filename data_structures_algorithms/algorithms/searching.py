@@ -3,6 +3,7 @@ from math import sqrt
 
 
 class Search:
+
     def __init__(self):
         pass
 

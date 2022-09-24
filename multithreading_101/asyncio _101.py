@@ -1,6 +1,7 @@
 import asyncio
 import time
 
+
 # Section 1
 async def sum(x1: int, x2: int) -> None:
     print(f"Sum of {x1} and {x2} is calculating...")
@@ -10,6 +11,7 @@ async def sum(x1: int, x2: int) -> None:
 
 # calling a async function -> running a coroutine way 1
 asyncio.run(sum(x1=14, x2=16))
+
 
 # Section 2
 async def say_message_after(delay: int, message: str) -> None:

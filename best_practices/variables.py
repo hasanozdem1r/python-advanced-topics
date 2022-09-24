@@ -8,6 +8,7 @@ for internal use.
 
 
 class Variables:
+
     def __init__(self):
         self.dollar = 18
         self._euro = 19  # for internal use

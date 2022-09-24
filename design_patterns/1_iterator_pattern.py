@@ -15,7 +15,6 @@ for tup in elements:
 for symbol, weight in elements:
     print(symbol, weight)
 
-
 d = {"H": 1.008, "He": 4.003, "Li": 6.94}
 
 # You don’t need to...

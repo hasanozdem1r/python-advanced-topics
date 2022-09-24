@@ -2,6 +2,7 @@
 
 
 class Parrot:
+
     def fly(self):
         print("Parrot can fly")
 
@@ -10,6 +11,7 @@ class Parrot:
 
 
 class Penguin:
+
     def fly(self):
         print("Penguin can't fly")
 

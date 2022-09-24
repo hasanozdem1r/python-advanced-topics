@@ -2,6 +2,7 @@ import psycopg2
 
 
 class Database:
+
     def __init__(self, host, db_name, user, password):
         self._host = host
         self._db_name = db_name

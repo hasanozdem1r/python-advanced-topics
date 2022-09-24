@@ -5,6 +5,7 @@ import wikipedia as wp
 
 
 class Wiki:
+
     def __init__(self):
         pass
 
@@ -38,9 +39,9 @@ class Wiki:
 
 wiki_obj = Wiki()
 for item in [
-    wiki_obj.search_wikipedia("Atatürk"),
-    wiki_obj.summary_wikipedia("Atatürk"),
-    wiki_obj.page_wikipedia("Atatürk"),
+        wiki_obj.search_wikipedia("Atatürk"),
+        wiki_obj.summary_wikipedia("Atatürk"),
+        wiki_obj.page_wikipedia("Atatürk"),
 ]:
     print(item)
     print("" * 50)

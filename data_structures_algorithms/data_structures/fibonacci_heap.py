@@ -2,8 +2,10 @@
 
 import math
 
+
 # Creating fibonacci tree
 class FibonacciTree:
+
     def __init__(self, value):
         self.value = value
         self.child = []
@@ -17,6 +19,7 @@ class FibonacciTree:
 
 # Creating Fibonacci heap
 class FibonacciHeap:
+
     def __init__(self):
         self.trees = []
         self.least = None
@@ -87,6 +90,7 @@ fibonacci_heap.insert_node(3)
 fibonacci_heap.insert_node(17)
 fibonacci_heap.insert_node(24)
 
-print("the minimum value of the fibonacci heap: {}".format(fibonacci_heap.get_min()))
+print("the minimum value of the fibonacci heap: {}".format(
+    fibonacci_heap.get_min()))
 
 print("the minimum value removed: {}".format(fibonacci_heap.extract_min()))

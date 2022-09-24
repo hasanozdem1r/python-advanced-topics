@@ -13,6 +13,7 @@ from twitter_helpers import *
 
 
 class Twitter:
+
     def __init__(self) -> None:
         """
         This constructor initialized necessary variables, containers
@@ -36,7 +37,8 @@ class Twitter:
         self.html_content = BeautifulSoup(self.content, "html.parser")
 
         # filter for hourly data
-        trends_hourly_data = self.html_content.find_all("div", {"class": "trend-card"})
+        trends_hourly_data = self.html_content.find_all("div",
+                                                        {"class": "trend-card"})
 
         # if user filtered number of query by times.
         # from last hour to till user want will fetch data
@@ -47,17 +49,17 @@ class Twitter:
             trend_time = str(trends_hourly_data[index].find("h5").text)
             # datetime format -> dd:mm:yyyy_hh:mm
             trend_time = format_time(trend_time)
-            trends_hour = (
-                trends_hourly_data[index]
-                .find("ol", {"class": "trend-card__list"})
-                .find_all("li")
-            )
+            trends_hour = (trends_hourly_data[index].find(
+                "ol", {
+                    "class": "trend-card__list"
+                }).find_all("li"))
             # loop through top 10 for each time
             for trend in trends_hour:
                 # append to the list
-                self.trends_list.append(
-                    {f"{str(trend_time)}": str(trend.find("a").text).encode("utf-8")}
-                )
+                self.trends_list.append({
+                    f"{str(trend_time)}":
+                        str(trend.find("a").text).encode("utf-8")
+                })
         # create pandas dataframe
         trends_df = DataFrame(self.trends_list)
         # return

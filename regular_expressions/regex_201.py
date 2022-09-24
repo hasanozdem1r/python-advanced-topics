@@ -25,8 +25,7 @@ name_list = [
 # [] Brackets metacharacter : Refer set of characters
 # [chk]
 check_match = lambda item: re.search(
-    "öz[chk]an", item
-)  # must be one of the letter from the group (c,h,k)
+    "öz[chk]an", item)  # must be one of the letter from the group (c,h,k)
 matches = [check_match(item).group() for item in name_list if check_match(item)]
 print(matches)
 
@@ -35,15 +34,16 @@ create_star()
 numbers = ["23BH56", "TY76Z", "4Y7UZ", "TYUDZ", "34Y34", "12345"]
 for number in numbers:
     if re.match(
-        "[0-9][A-Z]", number
-    ):  # there must be 1 number and 1 uppercase letter minimum
+            "[0-9][A-Z]",
+            number):  # there must be 1 number and 1 uppercase letter minimum
         print(number)
 
 create_star()
 # . Dot metacharacter : Refer any character except new line for on
 # e time occurrence
 for number in numbers:
-    if re.match("..Y", number):  # we referred there must be exactly 2 letter before Y
+    if re.match("..Y",
+                number):  # we referred there must be exactly 2 letter before Y
         print(number)
 
 create_star()
@@ -55,7 +55,6 @@ for i in list2:
 
 create_star()
 # get all .py files from the current folder
-
 
 index = listdir(getcwd())
 for i in index:
@@ -85,8 +84,8 @@ create_star()
 # ^ metacharacter : It's used to check first index of given string (starts with)
 for n in numbers:
     if re.search(
-        "^[A-Z]+[0-9]", n
-    ):  # we referred any words starts with at uppercase and number6
+            "^[A-Z]+[0-9]",
+            n):  # we referred any words starts with at uppercase and number6
         print(re.search("^[A-Z]+[0-9]", n).group())
 
 create_star()

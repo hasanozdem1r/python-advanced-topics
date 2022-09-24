@@ -36,10 +36,8 @@ while result:
 
     # we will go through our database and
     # search for the given keyword
-    for rows in c.execute(
-        "SELECT id,url FROM urls\
-	WHERE url LIKE '%google%'"
-    ):
+    for rows in c.execute("SELECT id,url FROM urls\
+	WHERE url LIKE '%google%'"):
         # this is just to check all
         # the urls that are being deleted
         print(rows)

@@ -12,6 +12,7 @@ def greet_bob(greeter_func):  # function expects a function as its argument
 
 print(greet_bob(say_hello))
 
+
 # Inner function
 def parent():
     print("Printing from the parent() function")

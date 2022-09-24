@@ -1,14 +1,12 @@
 # Content vs Styling
 # -> HTML ; Page specific content, structure, text or voice, not written for scraping
 # -> CSS ; Shared styling, selectors and declarations, divisions and spans, cascading rules
-
 """
 WHY SCRAPE WEB PAGES
 1. Storage and queries
 2. Data augmentation
 3. Analysis and Communication
 """
-
 """
 DYNAMIC Websites
 More difficult to scrape
@@ -19,7 +17,6 @@ Easy to scrape
 Data dumps are often static
 Requests and BeatifulSoup4
 """
-
 """
 WEB Scraping Strategies
 Processing Online ; Easy to develop, great for fewer pages, use for research
@@ -32,7 +29,8 @@ Processing Offline ; More complex, great for larger volumes, use for engineered 
 import requests
 import bs4
 
-result_wordpress = requests.get("https://en-gb.wordpress.org/plugins/browse/popular/")
+result_wordpress = requests.get(
+    "https://en-gb.wordpress.org/plugins/browse/popular/")
 
 # Processing Offline
 with open("wordpress.html", "w") as file_wordpress:

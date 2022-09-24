@@ -8,6 +8,7 @@ Differences between Generator function and Normal function
 6. Finally, when the function terminates, StopIteration is raised automatically on further calls.
 """
 
+
 # A simple generator function
 def my_gen():
     n = 1
@@ -34,9 +35,8 @@ next(a)
 # Using for loop
 for item in my_gen():
     print(item)
-
 """
-They have lazy execution ( producing items only when asked for ). 
+They have lazy execution ( producing items only when asked for ).
 For this reason, a generator expression is much more memory efficient than an equivalent list comprehension.
 """
 

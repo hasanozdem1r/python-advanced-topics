@@ -2,7 +2,6 @@
 This script is created to show fundamental of testing and doctest
 @Hasan Özdemir 01/13/2022
 """
-
 """
 The doctest module searches for pieces of text that look like interactive Python ses‐
 sions in docstrings, and then executes those sessions to verify that they work exactly

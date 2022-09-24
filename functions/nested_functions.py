@@ -8,6 +8,7 @@ def fun1(): # enclosing function
 
 
 def print_hello():
+
     def hello():
         print("Hello")
 

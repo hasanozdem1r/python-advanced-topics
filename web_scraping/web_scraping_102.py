@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
-wordpress_html = requests.get("https://en-gb.wordpress.org/plugins/browse/popular/")
-
+wordpress_html = requests.get(
+    "https://en-gb.wordpress.org/plugins/browse/popular/")
 """
 Extract Information with BS4
 Why not regular expressions ?
@@ -34,7 +34,6 @@ print(div.prettify())
 # copy element selector from Chrome Developer Tools and practice
 div_selector = parse_webpage.select("#car-1 > span.mpg")
 print(div_selector)
-
 """
 ADVICE AND STRATEGY FOR SCRAPING
 1. Selecting your content

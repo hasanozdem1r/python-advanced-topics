@@ -8,11 +8,11 @@
 
 ## Getting Started
 Boto3 is the AWS SDK for Python.
-Install AWS SDK 
+Install AWS SDK
 ```bash
     pip install boto3
 ```
-Create the IAM User at AWS 
+Create the IAM User at AWS
 1. Under the Services menu in the AWS Console, navigate to IAM.
 2. Under IAM click Users and then click 'Add user'
 3. Type your username 'data_pipeline_r_w'

@@ -11,6 +11,8 @@ pytest is a no-boilerplate alternative to Python’s standard unittest module, m
 doesn’t require the scaffolding of test classes, and maybe not even setup and teardown
 methods
 """
+
+
 # mathematical method
 def increment(x):
     return x + 1
@@ -32,6 +34,7 @@ def f_exit():
 
 
 class TestMathCases:
+
     def test_increment(self):
         assert increment(3) == 4
 
@@ -40,6 +43,7 @@ class TestMathCases:
 
 
 class TestSystem:
+
     def test_f_exit(self):
         with pytest.raises(SystemExit):
             f_exit()

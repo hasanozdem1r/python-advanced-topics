@@ -87,6 +87,7 @@ set_pairs = [
     ],
 ]
 
+
 # After creating the pairs of rules above, we define the chatbot using the code below
 # this is starter message for chatbot.
 def chatbot():
@@ -94,7 +95,6 @@ def chatbot():
 
 
 chatbot()
-
 
 # TODO 2.The next step is to instantiate the Chat() function containing the pairs and reflections.
 chat = Chat(set_pairs, reflections)

@@ -1,9 +1,8 @@
 import threading
 from queue import Queue
 import time
-
 """
-Each pastry after finish task will pick new task from queee and continue to prepare. 
+Each pastry after finish task will pick new task from queee and continue to prepare.
 They don't need to wait each other.
 """
 lock = threading.Lock()  # block conflict

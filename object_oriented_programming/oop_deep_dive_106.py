@@ -8,26 +8,31 @@ class Combined(Super1, Super2, Super3):
 calls to the super class __init__ are optional and case dependent
 """
 
+
 # The Diamond Problem
 # https://uwpce-pythoncert.github.io/SystemDevelopment/_images/Diamond_inheritance.png
 class A(object):
+
     def do_your_stuff(self):
         print("doing A's stuff")
 
 
 class B(A):
+
     def do_your_stuff(self):
         A.do_your_stuff(self)
         print("doing B's stuff")
 
 
 class C(A):
+
     def do_your_stuff(self):
         A.do_your_stuff(self)
         print("doing C's stuff")
 
 
 class D(B, C):
+
     def do_your_stuff(self):
         B.do_your_stuff(self)
         C.do_your_stuff(self)

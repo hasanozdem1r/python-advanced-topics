@@ -10,6 +10,7 @@ This script is created to teach fundamental of Binary Tree
 
 
 class Node:
+
     def __init__(self, key):
         self.left = None
         self.right = None

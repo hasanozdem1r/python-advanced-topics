@@ -1,6 +1,6 @@
 ![](docs/static/project_header.jpg)
-# PYTHON ADVANCED TOPICS  
-In this repository you will be learning advanced Python topics.  
+# PYTHON ADVANCED TOPICS
+In this repository you will be learning advanced Python topics.
 <br>
 This repository covers below topics
 1. API PRACTICES (Fast API, Wikipedia API)
@@ -18,7 +18,7 @@ This repository covers below topics
 13. MULTITHREADING
 14. NETWORK FUNDAMENTALS (Basics, Socket API)
 15. OBJECT ORIENTED PROGRAMMING
-16. PROJECTS 
+16. PROJECTS
 17. REGULAR EXPRESSIONS
 18. TESTING
 19. WEB SCRAPING (BS4, Requests)
@@ -45,7 +45,7 @@ http-server -> run after first line executed
 4. The Hitchhiker's Guide to Python (English)
 
 ## Contributing
-Pull requests are welcome. 
+Pull requests are welcome.
 <br>For major changes, please open an issue first to discuss what you would like to change.<br>
 Please make sure to update tests as appropriate.
 

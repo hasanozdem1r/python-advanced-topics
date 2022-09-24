@@ -6,6 +6,7 @@ file = Path("data_sources", "VOCABULARY.xlsx")
 
 
 class XlsxOperations:
+
     def __init__(self, file_path: str) -> None:
         self._file_path = file_path
         self._workbook_obj = oxl.load_workbook(self._file_path)

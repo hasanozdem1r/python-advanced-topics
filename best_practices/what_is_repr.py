@@ -5,6 +5,7 @@ This script summarize repr method
 
 
 class Tractor:
+
     def __init__(self, horse_power: int, model: int, cylinder: int, km: int):
         self.horse_power = horse_power
         self.model = model

@@ -42,9 +42,8 @@ def extract_data(c_b, soup):
     territory, year = extract_territory_year(soup)
 
     acceleration = float(c_b.find("span", class_="acceleration").text)
-    assert (
-        acceleration > 0
-    ), f"Expecting acceleration to be a positive not{acceleration}"
+    assert (acceleration >
+            0), f"Expecting acceleration to be a positive not{acceleration}"
 
     mpg = extract_mpg(c_b)
 
@@ -85,9 +84,8 @@ def extract_territory_year(soup):
     year: int = int(year.strip())
     assert year > 0, f"Expecting year to be a positive not {year}"
     territory: str = territory.strip()
-    assert (
-        len(territory) > 0
-    ), f"Expecting territory to be useful string not {territory}"
+    assert (len(territory) >
+            0), f"Expecting territory to be useful string not {territory}"
     return territory, year
 
 
@@ -130,9 +128,8 @@ if __name__ == "__main__":
             print(f"Writing cached {filename}")
             pickle.dump(result, file)
 
-    assert result.status_code == 200, (
-        f"Got status code{result.status_code}'" f'which isn"t a success'
-    )
+    assert result.status_code == 200, (f"Got status code{result.status_code}'"
+                                       f'which isn"t a success')
     source = result.text
     soup = BeautifulSoup(source, "html.parser")
     process_car_block(soup)

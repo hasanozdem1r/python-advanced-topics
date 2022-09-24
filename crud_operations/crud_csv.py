@@ -2,6 +2,7 @@ import csv
 
 
 class CsvOperations:
+
     def __init__(self, file_path):
         self.file_path = file_path
 
@@ -11,7 +12,11 @@ class CsvOperations:
             for row in food_file:
                 print(row)
 
-    def write_csv(self, food_name="", scientific_name="", group="", sub_group=""):
+    def write_csv(self,
+                  food_name="",
+                  scientific_name="",
+                  group="",
+                  sub_group=""):
         with open(self.file_path, newline="", mode="a") as csv_file:
             food_write = csv.writer(csv_file, delimiter=" ", quotechar="|")
             food_write.writerow([food_name, scientific_name, group, sub_group])

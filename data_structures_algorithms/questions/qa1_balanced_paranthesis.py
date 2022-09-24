@@ -1,6 +1,7 @@
 # is a string balanced
 # balanced -> {} squiggles , [] brackets, () parenthesis
 class Brackets:
+
     def balanced_brackets(self, characters: str) -> bool:
         punctuation_stack = []
         # keys ---> (, {, [
@@ -10,7 +11,8 @@ class Brackets:
         for char in characters:
             if char in punctuations:
                 punctuation_stack.append(char)
-            if len(punctuation_stack) > 1 and punctuation_stack[-2] in tokens.keys():
+            if len(punctuation_stack
+                  ) > 1 and punctuation_stack[-2] in tokens.keys():
                 if punctuation_stack[-1] == tokens[punctuation_stack[-2]]:
                     punctuation_stack.remove(punctuation_stack[-1])
                     punctuation_stack.remove(punctuation_stack[-1])

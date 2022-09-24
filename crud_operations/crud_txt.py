@@ -5,6 +5,7 @@ file = open("data_sources/employee_database.txt", "a")
 
 
 class File_Operations:
+
     def __init__(self, file_path: str):
         self._file_path = file_path
         # if file is not exist it will create a new file
