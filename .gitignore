@@ -142,3 +142,4 @@ cython_debug/
 # Config Files
 *.conf
 
+/exe_files
