@@ -13,6 +13,8 @@ requests = "^2.28.1"
 python-dotenv = "^0.21.0"
 bs4 = "^0.0.1"
 pandas = "^1.5.3"
+asyncio = "^3.4.3"
+rich = "^13.3.1"
 
 [tool.poetry.dev-dependencies]
 
