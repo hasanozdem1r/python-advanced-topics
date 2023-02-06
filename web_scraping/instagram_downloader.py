@@ -17,4 +17,4 @@ def download_public_image(image_url: str):
 
 
 if __name__ == "__main__":
-    download_public_image(image_url="https://www.instagram.com/p/ClZK-BctgBI/")
+    download_public_image(image_url="put-instagram-link")
