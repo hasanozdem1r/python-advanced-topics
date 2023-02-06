@@ -18,7 +18,7 @@ def get_page_content(link: str, parser="html.parser"):
             'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
     }
     page_content = requests.get(link, headers=headers).content
-    soup_obj = BeautifulSoup(page_content, "html.parser")
+    soup_obj = BeautifulSoup(page_content, parser)
     return soup_obj
 
 
