@@ -37,19 +37,25 @@ def prepare_df(df_data: List[str], columns: List[str]) -> pd.DataFrame:
     df = pd.DataFrame(df_data)
     df.dropna(subset=columns, how='all', inplace=True)
     df.to_csv("../data/tr_earthquake.csv")
-    print("OK")
     return df
 
 
 def text_cleanup(text: str, columns: List[str]) -> List[str]:
+    """
+    Clean single and multiple spaces and split data by \n to map with dataframe
+    :param text: _description_
+    :param columns: _description_
+    :return: _description_
+    """
     df_data: List[str] = []
-    # convert to list by \n
+    # convert to list by splitting \n
     lines: List[str] = text.split("\n")
     for line in lines:
         # replace single space with underscore
         line = re.sub(r'(?<=\S)\s(?=\S)', '_', line)
         # replace multiple space with single space
         fixed_line = " ".join(line.split())
+        # split elements by single space
         fixed_line = fixed_line.split()
         row = {}
         for i, column_name in enumerate(columns):
