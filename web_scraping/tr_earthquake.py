@@ -55,7 +55,7 @@ def text_cleanup(text: str, columns: List[str]) -> List[str]:
         line = re.sub(r'(?<=\S)\s(?=\S)', '_', line)
         # replace multiple space with single space
         fixed_line = " ".join(line.split())
-        # split elements by single space
+        # split elements by single space to map df columns
         fixed_line = fixed_line.split()
         row = {}
         for i, column_name in enumerate(columns):
