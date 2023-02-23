@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  poetry: talkiq/poetry@4.0.0
+
 jobs:
   build:
     docker:
@@ -13,12 +16,6 @@ jobs:
           command: |
             sudo apt-get update
             sudo apt-get install python3.9
-
-      - run:
-          name: Set up Poetry
-          command: |
-            curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-            source $HOME/.poetry/env
 
       - run:
           name: Set PYTHONPATH
