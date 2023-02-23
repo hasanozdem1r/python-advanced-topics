@@ -1,1 +1,34 @@
-# for CircleCI
+version: 2.1
+
+orbs:
+  poetry: talkiq/poetry@4.0.0
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.9
+
+    steps:
+      - checkout
+
+      - run:
+          name: Set up Python 3.9
+          command: |
+            sudo apt-get update
+            sudo apt-get install python3.9
+
+      - run:
+          name: Set PYTHONPATH
+          command: export PYTHONPATH="$PWD"
+
+      - restore_cache:
+          key: venv-{{ checksum "poetry.lock" }}
+
+      - run:
+          name: Install project dependencies
+          command: poetry install --no-root
+
+      - save_cache:
+          key: venv-{{ checksum "poetry.lock" }}
+          paths:
+            - ~/.cache/pypoetry
