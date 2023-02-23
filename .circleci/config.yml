@@ -1,1 +1,37 @@
-# for CircleCI
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.9
+
+    steps:
+      - checkout
+
+      - run:
+          name: Set up Python 3.9
+          command: |
+            sudo apt-get update
+            sudo apt-get install python3.9
+
+      - run:
+          name: Set PYTHONPATH
+          command: export PYTHONPATH="$PWD"
+
+      - run:
+          name: Set up Poetry
+          command: |
+            curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | POETRY_UNINSTALL=1 python -
+            curl -sSL https://install.python-poetry.org | python3 -
+
+      - restore_cache:
+          key: venv-{{ checksum "poetry.lock" }}
+
+      - run:
+          name: Install project dependencies
+          command: poetry install --no-root
+
+      - save_cache:
+          key: venv-{{ checksum "poetry.lock" }}
+          paths:
+            - ~/.cache/pypoetry
