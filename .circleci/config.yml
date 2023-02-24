@@ -1,9 +1,12 @@
 version: 2.1
 
+orbs:
+  poetry: talkiq/poetry@4.0.0
+
 jobs:
   build:
     docker:
-      - image: cimg/python
+      - image: circleci/python:3.9
 
     steps:
       - checkout
