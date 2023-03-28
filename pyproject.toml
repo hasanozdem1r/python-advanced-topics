@@ -15,6 +15,7 @@ bs4 = "^0.0.1"
 pandas = "^1.5.3"
 asyncio = "^3.4.3"
 rich = "^13.3.1"
+jupyterlab = "^3.6.2"
 
 [tool.poetry.dev-dependencies]
 
