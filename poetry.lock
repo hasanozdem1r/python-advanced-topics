@@ -1355,6 +1355,46 @@ files = [
 ]
 
 [[package]]
+name = "memray"
+version = "1.7.0"
+description = "A memory profiler for Python applications"
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+files = [
+    {file = "memray-1.7.0-cp310-cp310-macosx_10_14_x86_64.whl", hash = "sha256:0de3b27e1bbea325794b6dff276d3ce9081b6e1c485836e9fe271c4691bd8523"},
+    {file = "memray-1.7.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:9a1b9c11e2dd34594a20764228f281599eb2191f1e52944eb3ec44d4c0e9d5fd"},
+    {file = "memray-1.7.0-cp310-cp310-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:6c69636e423a7acd20d2d8ab21d992dbb2ca78db48221438ea7ebfcbcc7f323c"},
+    {file = "memray-1.7.0-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:e9a79389d1b75b27073db661f0a8add700540f08d6ab359d8714850c4edd0854"},
+    {file = "memray-1.7.0-cp311-cp311-macosx_10_14_x86_64.whl", hash = "sha256:7571c1ba6e70249d81731b7d48d7e8c380ea84fc812df850ce783c906b9cff68"},
+    {file = "memray-1.7.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:df3da7c0291ee93815d97532cd9498d9410f8848ca00a3001ff676edb35f85eb"},
+    {file = "memray-1.7.0-cp311-cp311-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:6f3b239309a10fcf8d48b0f4e444d0d51846cacd44bf12125c46e458887d0b21"},
+    {file = "memray-1.7.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f6caa30fab38fb512278e637de2ccc503d6edafec3e8ad840c2876dcd15060e6"},
+    {file = "memray-1.7.0-cp37-cp37m-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:b27f012773bebeeecde9e7a605503e9c0ffb74d9f08e96eea55758d3f9598baf"},
+    {file = "memray-1.7.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:29c62eb9d81617eaa933d303b3cf91a5e4ea891805a6c692f5a7c970b43e6929"},
+    {file = "memray-1.7.0-cp38-cp38-macosx_10_14_x86_64.whl", hash = "sha256:7a3192523db97b63be964e85d161e398906533d22450c594489f4837e610c54b"},
+    {file = "memray-1.7.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:7812ba658b308eed384e1c132694bc285709fe72704e829be3d5a54e1054d95f"},
+    {file = "memray-1.7.0-cp38-cp38-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:e8acd651712c6e18a78bae187cc694229dbaa56b3584a4d525019dff53b81d00"},
+    {file = "memray-1.7.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:0756988f68d49a13b07b52bab7d9bdf6ab3dc52b0590e54f37172072bbb45d3b"},
+    {file = "memray-1.7.0-cp39-cp39-macosx_10_14_x86_64.whl", hash = "sha256:c5eeb74f75bfc8560c0f5c3911cd3a2c55c852a048b35fab8fc12c5f7f1f5cd8"},
+    {file = "memray-1.7.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:22ad635849243b7059b60996a9c159de182f12dd2012161943131a01118e1a0f"},
+    {file = "memray-1.7.0-cp39-cp39-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:43ece36d2235558defae1912de8f12bf1e6bbfbf635fc19ac1c211488c22bd32"},
+    {file = "memray-1.7.0-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:ed9e35ad16421f01ea6ddadbeeb8a6e260d830edbce2b4d4066e8ef24a429cc7"},
+    {file = "memray-1.7.0.tar.gz", hash = "sha256:cc3b114d24828edaafc31bc19effb90530e7df38e37f100a0f6f03a2584976d4"},
+]
+
+[package.dependencies]
+jinja2 = ">=2.9"
+rich = ">=11.2.0"
+
+[package.extras]
+benchmark = ["asv"]
+dev = ["Cython", "IPython", "asv", "black", "bump2version", "check-manifest", "flake8", "furo", "greenlet", "ipython", "isort", "mypy", "pytest", "pytest-cov", "sphinx", "sphinx-argparse", "towncrier"]
+docs = ["IPython", "bump2version", "furo", "sphinx", "sphinx-argparse", "towncrier"]
+lint = ["black", "check-manifest", "flake8", "isort", "mypy"]
+test = ["Cython", "greenlet", "ipython", "pytest", "pytest-cov"]
+
+[[package]]
 name = "mistune"
 version = "2.0.5"
 description = "A sane Markdown parser with useful plugins and renderers"
@@ -2694,4 +2734,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "fc94a98995801675d13106b346a072bf34eed61c52e96825e3552fb62f394ab9"
+content-hash = "f182af6a9e13a10806f606fdff5b1dab4fef28765b727f7dce192ae2024a3d37"
