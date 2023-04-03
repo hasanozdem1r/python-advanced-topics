@@ -3,7 +3,7 @@ name: general
 on:
   # actual pipeline
   pull_request:
-    branches: 
+    branches:
       - master
     types: [closed]
   # for testing purpose
@@ -59,4 +59,4 @@ jobs:
         run: |
           pip install pre-commit \
           pre-commit install \
-          pre-commit run --all-files
+          pre-commit run --all-files \
