@@ -1,8 +1,14 @@
-name: build
+name: general
 
 on:
+  # actual pipeline
+  pull_request:
+    branches: 
+      - master
+    types: [closed]
+  # for testing purpose
   push:
-    branches: [ master ]
+    branches: [ fix/ci-cd-improve ]
 
 jobs:
   build:
