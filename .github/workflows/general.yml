@@ -1,11 +1,17 @@
-name: build
+name: general
 
 on:
+  # actual pipeline
+  pull_request:
+    branches:
+      - master
+    types: [closed]
+  # for testing purpose
   push:
-    branches: [ master ]
+    branches: [ fix/ci-cd-improve ]
 
 jobs:
-  build:
+  general:
 
     runs-on: ubuntu-latest
     strategy:
@@ -47,3 +53,7 @@ jobs:
         name: Install project dependencies
         run: poetry install
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+
+      - id: setup_pre_commit
+        name: Run pre-commit
+        uses: pre-commit/action@v3.0.0
