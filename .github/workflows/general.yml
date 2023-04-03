@@ -56,7 +56,4 @@ jobs:
 
       - id: setup_pre_commit
         name: Run pre-commit
-        run: |
-          pip install pre-commit \
-          pre-commit install \
-          pre-commit run --all-files \
+        uses: pre-commit/action@v3.0.0
