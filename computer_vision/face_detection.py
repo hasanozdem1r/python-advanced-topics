@@ -21,4 +21,4 @@ img = cv2.resize(img, (700, 900))
 cv2.imshow("Hasan Ozdemir", img)
 
 cv2.waitKey(0)  # wait until user press a key
-cv2.destroyAllWindows()  # closes the window based on waitforkey parameter
+cv2.destroyAllWindows()  # closes the window based on wait for key parameter
