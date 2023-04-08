@@ -14,9 +14,7 @@ class Polynomial:
     
     def __len__(self):
         return len(self.coeffs)
-    
-    def __call__(self):
-        
+            
 
 if __name__=="__main__":
     # python -i events/james_powell_pydata_2017/data_model.py # run interactive
