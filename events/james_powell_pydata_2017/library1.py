@@ -4,7 +4,7 @@
 # you can't control what your users write so how to make sure your user doesn't fail your code
 # python is protocol oriented language
 # from dis import dis # disassamble
-
+# how to enforce constraints from derived class to base class
 class Base:
     def foo(self):
         return self.bar()
@@ -24,4 +24,3 @@ builtins.__build_class__=my_bc
 # run for test
 # python -i user.py 
 
-# how to enforce constraints from derived class to base class
