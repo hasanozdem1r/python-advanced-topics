@@ -2,7 +2,7 @@
 # 1. using via __built_class__ (least common approach)
 # 2. using metaclass (complex syntax, clumsy to use)
 # 3. using _init_subclass
-# TODO: complete this (from 47.00 mins)
+
 class Base():
     def foo(self):
         return self.bar()
