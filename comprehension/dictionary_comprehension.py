@@ -7,7 +7,7 @@ capital = ["Turkey", "Poland", "Czechia"]
 output_dict = {}
 
 # Using loop for constructing output dictionary
-for (key, value) in zip(state, capital):
+for key, value in zip(state, capital):
     output_dict[key] = value
 
 print("Output Dictionary using for loop:", output_dict)

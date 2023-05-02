@@ -4,11 +4,11 @@
 # 3. using _init_subclass
 
 
-class Base():
+class Base:
 
     def foo(self):
         return self.bar()
 
     def __init_subclass__(cls, *a, **kw) -> None:
-        print('__init__subclass', a, kw)
+        print("__init__subclass", a, kw)
         return super().__init_subclass__(cls, *a, **kw)

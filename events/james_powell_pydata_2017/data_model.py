@@ -8,7 +8,7 @@ class Polynomial:
 
     # repr(p1) better output
     def __repr__(self) -> str:
-        return 'Polynomial(*{!r})'.format(self.coeffs)
+        return "Polynomial(*{!r})".format(self.coeffs)
 
     def __add__(self, other):
         return Polynomial(*(x + y for x, y in zip(self.coeffs, other.coeffs)))

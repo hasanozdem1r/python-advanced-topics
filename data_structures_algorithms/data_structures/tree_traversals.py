@@ -9,7 +9,6 @@ class Node:
 
 
 def inorder(root):
-
     if root:
         # Traverse left
         inorder(root.left)
@@ -20,7 +19,6 @@ def inorder(root):
 
 
 def postorder(root):
-
     if root:
         # Traverse left
         postorder(root.left)
@@ -31,7 +29,6 @@ def postorder(root):
 
 
 def preorder(root):
-
     if root:
         # Traverse root
         print(str(root.val) + "->", end="")

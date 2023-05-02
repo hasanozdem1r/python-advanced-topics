@@ -9,7 +9,6 @@ BUFFER_SIZE = 1024
 
 # inheritance
 class ClientThread(Thread):
-
     # class constructor
     def __init__(self, ip, port, sock):
         # inheritance of Thread class

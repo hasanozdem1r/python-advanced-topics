@@ -8,10 +8,10 @@ How the following code fail ? If foo method doesn't exist
 Write code to check whether it's exist or not so you won't have problem
 """
 # enforce constraint
-assert hasattr(Base, 'foo'), 'You broke it, you fool'
+assert hasattr(Base, "foo"), "You broke it, you fool"
 
 
 class Derived(Base):
 
     def bar(self):
-        return 'bar'
+        return "bar"
