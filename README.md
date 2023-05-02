@@ -39,6 +39,12 @@ If you already installed Node.js also you can do with npm.
 npm install http-server -g -> run first
 http-server -> run after first line executed
 ```
+
+# Software Development Considerations
+While every software engineer may have their own personal preferences when it comes to development practices, it's important to follow industry best practices and standards to ensure efficient and effective software development.
+
+Please [click](docs/standards.md) to see best practices & standards that I am following for software development
+
 ## Acknowledgements
 1. İstihza Yazbel (Turkish)
 2. Python Tricks by Dan Bader (English)
