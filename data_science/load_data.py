@@ -6,15 +6,17 @@ from dask import dataframe as dd
 import polars as pl
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = f'{CURRENT_DIR}/../data/traffic_crashes.csv'
+DATA_PATH = f"{CURRENT_DIR}/../data/traffic_crashes.csv"
 
 
 # with csv core package
-def read_csv_1(file_path: str,
-               chunk_size: int = None,
-               mode: str = 'r',
-               delimiter: str = ';',
-               encoding: str = 'utf-8') -> List[List[str]]:
+def read_csv_1(
+    file_path: str,
+    chunk_size: int = None,
+    mode: str = "r",
+    delimiter: str = ";",
+    encoding: str = "utf-8",
+) -> List[List[str]]:
     """
     Reads a CSV file and returns its content as a list of lists, where each list corresponds to a row in the file.
 
@@ -26,7 +28,7 @@ def read_csv_1(file_path: str,
     :return: A list of lists representing the content of the CSV file.
     """
     rows = []
-    with open(file_path, mode=mode, encoding=encoding, newline='') as file:
+    with open(file_path, mode=mode, encoding=encoding, newline="") as file:
         reader = csv.reader(file, delimiter=delimiter)
         if chunk_size is not None:
             while True:
@@ -42,8 +44,8 @@ def read_csv_1(file_path: str,
 # with pandas
 def read_csv_2(file_path: str,
                chunk_size: int = None,
-               delimiter: str = ';',
-               encoding: str = 'utf8') -> pd.DataFrame:
+               delimiter: str = ";",
+               encoding: str = "utf8") -> pd.DataFrame:
     """
     Read a CSV file into a Pandas DataFrame.
 
@@ -55,10 +57,12 @@ def read_csv_2(file_path: str,
     """
     if chunk_size is not None:
         chunks = []
-        for chunk in pd.read_csv(filepath_or_buffer=file_path,
-                                 chunksize=chunk_size,
-                                 delimiter=delimiter,
-                                 encoding=encoding):
+        for chunk in pd.read_csv(
+                filepath_or_buffer=file_path,
+                chunksize=chunk_size,
+                delimiter=delimiter,
+                encoding=encoding,
+        ):
             chunks.append(chunk)
         df = pd.concat(chunks)
     else:
@@ -71,8 +75,8 @@ def read_csv_2(file_path: str,
 # with dask
 def read_csv_3(file_path: str,
                chunk_size: int = None,
-               delimiter: str = ';',
-               encoding: str = 'utf8'):
+               delimiter: str = ";",
+               encoding: str = "utf8"):
     if chunk_size is not None:
         df = dd.read_csv(file_path,
                          chunksize=chunk_size,
@@ -86,14 +90,16 @@ def read_csv_3(file_path: str,
 # with polars
 def read_csv_4(file_path: str,
                chunk_size: int = None,
-               delimiter: str = ';',
-               encoding: str = 'utf8'):
+               delimiter: str = ";",
+               encoding: str = "utf8"):
     if chunk_size is not None:
         chunks = []
-        for df in pl.read_csv(source=file_path,
-                              batch_size=chunk_size,
-                              separator=delimiter,
-                              encoding=encoding):
+        for df in pl.read_csv(
+                source=file_path,
+                batch_size=chunk_size,
+                separator=delimiter,
+                encoding=encoding,
+        ):
             chunks.append(df)
         return pl.concat(chunks)
     else:

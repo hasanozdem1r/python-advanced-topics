@@ -10,8 +10,16 @@ import numpy as np
 
 BASE_LINK = "http://www.koeri.boun.edu.tr/scripts/lst9.asp"
 COLUMNS: List[str] = [
-    "Tarih - Saat", "Enlem(N)", "Boylam(E)", "Derinlik(km)", "MD", "ML", "MW",
-    "Lokasyon", "Çözüm Niteliği", "Son durum"
+    "Tarih - Saat",
+    "Enlem(N)",
+    "Boylam(E)",
+    "Derinlik(km)",
+    "MD",
+    "ML",
+    "MW",
+    "Lokasyon",
+    "Çözüm Niteliği",
+    "Son durum",
 ]
 
 
@@ -23,8 +31,8 @@ def fetch_earthquake_data(link: str, parser="html.parser"):
     """
     # use fake User-Agent to deal 403 Forbidden
     headers: Dict[str, str] = {
-        'User-Agent':
-            'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
+        "User-Agent":
+            "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
     }
     page_content = requests.get(link, headers=headers).content
     soup_obj = BeautifulSoup(page_content, parser)
@@ -35,7 +43,7 @@ def fetch_earthquake_data(link: str, parser="html.parser"):
 
 def prepare_df(df_data: List[str], columns: List[str]) -> pd.DataFrame:
     df = pd.DataFrame(df_data)
-    df.dropna(subset=columns, how='all', inplace=True)
+    df.dropna(subset=columns, how="all", inplace=True)
     df.to_csv("../data/tr_earthquake.csv")
     return df
 
@@ -52,7 +60,7 @@ def text_cleanup(text: str, columns: List[str]) -> List[str]:
     lines: List[str] = text.split("\n")
     for line in lines:
         # replace single space with underscore
-        line = re.sub(r'(?<=\S)\s(?=\S)', '_', line)
+        line = re.sub(r"(?<=\S)\s(?=\S)", "_", line)
         # replace multiple space with single space
         fixed_line = " ".join(line.split())
         # split elements by single space to map df columns

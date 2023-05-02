@@ -18,6 +18,8 @@ rich = "^13.3.1"
 jupyterlab = "^3.6.2"
 polars = "^0.16.16"
 memray = "^1.7.0"
+prettytable = "^3.7.0"
+black = "^23.3.0"
 
 [tool.poetry.dev-dependencies]
 

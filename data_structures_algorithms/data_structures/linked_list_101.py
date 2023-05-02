@@ -23,7 +23,6 @@ class LinkedList:
 
     # Insert after a node
     def insertAfter(self, prev_node, new_data):
-
         if prev_node is None:
             print("The given previous node must inLinkedList.")
             return
@@ -48,7 +47,6 @@ class LinkedList:
 
     # Deleting a node
     def deleteNode(self, position):
-
         if self.head is None:
             return
 
@@ -80,7 +78,6 @@ class LinkedList:
 
     # Search an element
     def search(self, key):
-
         current = self.head
 
         while current is not None:
@@ -119,7 +116,6 @@ class LinkedList:
 
 
 if __name__ == "__main__":
-
     llist = LinkedList()
     llist.insertAtEnd(1)
     llist.insertAtBeginning(2)

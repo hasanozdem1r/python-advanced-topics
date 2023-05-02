@@ -26,7 +26,6 @@ result = True
 # create a while loop and put
 # result as our condition
 while result:
-
     result = False
 
     # a list which is empty at first,

@@ -14,8 +14,8 @@ def get_page_content(link: str, parser="html.parser"):
     """
     # use fake User-Agent to deal 403 Forbidden
     headers: Dict[str, str] = {
-        'User-Agent':
-            'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
+        "User-Agent":
+            "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
     }
     page_content = requests.get(link, headers=headers).content
     soup_obj = BeautifulSoup(page_content, parser)
@@ -64,7 +64,7 @@ def get_movie_detail(links: List[str]):
     movie_details: List = []
     for link in links:
         soup_obj = get_page_content(link=link)
-        #get description
+        # get description
         description = soup_obj.find("span", {"class": "sc-16ede01-0"}).text
         soup_obj = get_page_content(link=link, parser="lxml")
         # get director with xpath
@@ -80,5 +80,5 @@ def get_movie_detail(links: List[str]):
 
 
 if __name__ == "__main__":
-    #get_top_250(link="https://www.imdb.com/chart/top/")
+    # get_top_250(link="https://www.imdb.com/chart/top/")
     get_movie_detail(["https://www.imdb.com/title/tt0068646/"])

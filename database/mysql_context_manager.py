@@ -51,7 +51,7 @@ class MySqlCrud:
             connection_obj.close()
 
     def read_data_from_db(self, database: str, table_name: str,
-                          output_format) -> (DataFrame or list or None):
+                          output_format) -> DataFrame or list or None:
         """
         This method is created to fetch data from databases with support of context managers
         :param database: <str> Name of database to fetch data

@@ -2,7 +2,6 @@ from typing import Any
 
 
 class Person:
-
     # init method is used to create an instance of the class.
     def __init__(self, person_id: int, full_name: str, age: int,
                  country_of_residence: str) -> None:
@@ -16,26 +15,26 @@ class Person:
         return f"Full-name:{self.full_name} - Age:{self.age} - Country of Residence:{self.country_of_residence}"
 
     def __setitem__(self, key: Any, value: Any):
-        if key == 'person_id':
+        if key == "person_id":
             self.person_id = value
-        elif key == 'full_name':
+        elif key == "full_name":
             self.full_name = value
-        elif key == 'age':
+        elif key == "age":
             self.age = value
-        elif key == 'country_of_residence':
+        elif key == "country_of_residence":
             self.country_of_residence = value
         else:
             raise KeyError(
                 f"{key} is not a valid attribute of the Person class")
 
     def __getitem__(self, key):
-        if key == 'person_id':
+        if key == "person_id":
             return self.person_id
-        elif key == 'full_name':
+        elif key == "full_name":
             return self.full_name
-        elif key == 'age':
+        elif key == "age":
             return self.age
-        elif key == 'country_of_residence':
+        elif key == "country_of_residence":
             return self.country_of_residence
         else:
             raise KeyError(
@@ -47,13 +46,13 @@ class Person:
         :param key: attribute
         :raises KeyError: if given attribute is not existed
         """
-        if key == 'person_id':
+        if key == "person_id":
             del self.person_id
-        elif key == 'full_name':
+        elif key == "full_name":
             del self.full_name
-        elif key == 'age':
+        elif key == "age":
             del self.age
-        elif key == 'country_of_residence':
+        elif key == "country_of_residence":
             del self.country_of_residence
         else:
             raise KeyError(
@@ -66,9 +65,10 @@ class Person:
                 f"Cannot concatenate Person with {type(second_obj).__name__}")
 
         person_id = self.person_id + second_obj.person_id
-        full_name = self.full_name + ' ' + second_obj.full_name
+        full_name = self.full_name + " " + second_obj.full_name
         age = self.age + second_obj.age
-        country_of_residence = self.country_of_residence + ' & ' + second_obj.country_of_residence
+        country_of_residence = (self.country_of_residence + " & " +
+                                second_obj.country_of_residence)
         return Person(person_id, full_name, age, country_of_residence)
 
 
@@ -100,7 +100,7 @@ if __name__ == "__main__":
     # print(p3.full_name) # Raises AttributeError: 'Person' object has no attribute 'full_name'
 
     # add two object with __add__ method
-    p4 = Person(1, 'John Doe', 30, 'USA')
-    p5 = Person(2, 'Jane Doe', 25, 'UK')
+    p4 = Person(1, "John Doe", 30, "USA")
+    p5 = Person(2, "Jane Doe", 25, "UK")
     p6 = p4 + p5
     print(p6.full_name)  # Output: 'John Doe Jane Doe'
