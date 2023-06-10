@@ -1,5 +1,5 @@
-## Commit Convention  
-Writing a code commit is very critical when it comes to debugging or analyzing colleagues work. 
+## Commit Convention
+Writing a code commit is very critical when it comes to debugging or analyzing colleagues work.
 I follow this [standards](https://www.conventionalcommits.org/en/v1.0.0/) for commit message
 
 ## Pre-Commit Hooks
