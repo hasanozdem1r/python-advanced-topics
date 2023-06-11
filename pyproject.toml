@@ -21,6 +21,7 @@ memray = "^1.7.0"
 prettytable = "^3.7.0"
 black = "^23.3.0"
 graphviz = "^0.20.1"
+mysql-connector-python = "^8.0.33"
 
 [tool.poetry.dev-dependencies]
 
