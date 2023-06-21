@@ -10,3 +10,8 @@ repos:
   hooks:
   -   id: check-yaml
   -   id: trailing-whitespace
+
+- repo: https://github.com/nbQA-dev/nbQA
+  rev: 1.7.0
+  hooks:
+  -   id: nbqa-yapf
