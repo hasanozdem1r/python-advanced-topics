@@ -2,14 +2,27 @@
 MySQL CRUD Operations with Context Managers
 @ Hasan Özdemir 01/09/2022
 """
+"""
+Following steps required for whom using WSL and connecting Windows Machine
+Firstly create user from MySQL Server
+CREATE USER 'wsl_root'@'localhost' IDENTIFIED BY 'wsl_12345';
+GRANT ALL PRIVILEGES ON *.* TO 'wsl_root'@'localhost' WITH GRANT OPTION;
+CREATE USER 'wsl_root'@'%' IDENTIFIED BY 'wsl_12345';
+GRANT ALL PRIVILEGES ON *.* TO 'wsl_root'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+Then run following command
+mysql -u wsl_root -p -h 192.168.1.95 (Windows Machine IP)
+"""
 
-from mysql.connector import connect  # # pip install mysql-connector-python
-from configparser import ConfigParser  # to read db details
-from contextlib import contextmanager  # to create our own context manager
+# pip install mysql-connector-python
+from mysql.connector import connect
+from configparser import ConfigParser
+from contextlib import contextmanager
 from pandas import (
     read_sql,
     DataFrame,
-)  # to retrieve the data from MySQL into a pandas dataframe
+)
+import os
 
 
 class MySqlCrud:
@@ -50,7 +63,7 @@ class MySqlCrud:
             # close connection __exit__ method
             connection_obj.close()
 
-    def read_data_from_db(self, database: str, table_name: str,
+    def read_data_from_db(self, database: str, query: str,
                           output_format) -> DataFrame or list or None:
         """
         This method is created to fetch data from databases with support of context managers
@@ -63,13 +76,12 @@ class MySqlCrud:
         with self.connect_database(database=database) as connection:
             if output_format == DataFrame:
                 # get data as dataframe
-                query_data: DataFrame = read_sql(
-                    sql=f"SELECT * FROM {database}.{table_name};",
-                    con=connection)
+                query_data: DataFrame = read_sql(sql=f"{query};",
+                                                 con=connection)
                 return query_data
             elif output_format == list:
                 cursor_obj = connection.cursor()
-                cursor_obj.execute(f"SELECT * FROM {database}.{table_name};")
+                cursor_obj.execute(f"{query};")
                 query_data: list = cursor_obj.fetchall()
                 return query_data
             else:
@@ -78,9 +90,9 @@ class MySqlCrud:
 
 # create a ConfigParser class instance
 conf_obj = ConfigParser()
-
+cwd = os.path.dirname(__file__)
 # read all information from config file
-conf_obj.read("database_config.ini")
+conf_obj.read(f"{cwd}/database_config.ini")
 user_info = conf_obj["MYSQL_USER_INFO"]
 db_info = conf_obj["MYSQL_DB_CONFIG"]
 
@@ -92,4 +104,7 @@ if __name__ == "__main__":
     # instantiate MySqlCrud object
     mysql_obj = MySqlCrud(usr=user, pwd=password, hst=host)
     # read data from database
-    # mysql_obj.read_data_from_db(database='sakila',table_name='actor',output_format=DataFrame)
+    data = mysql_obj.read_data_from_db(database='holibrary',
+                                       query='select * from Books;',
+                                       output_format=DataFrame)
+    print(data)
