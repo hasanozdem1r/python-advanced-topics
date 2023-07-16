@@ -25,67 +25,54 @@ from pandas import (
 import os
 
 
-class MySqlCrud:
+@contextmanager
+def connect_database(host, user, password, database: str) -> None:
+    """
+    This context manager is created to manage properly external resources
+    :param database: <str> Name of database to connect
+    :return: None
+    """
+    # instantiate connection obj __init__ method
+    connection_obj = connect(host=host,
+                             user=user,
+                             password=password,
+                             database=database)
+    try:
+        # connect to db __enter__ method
+        yield connection_obj
+    except Exception:
+        # rollback all changes
+        connection_obj.rollback()
+    else:
+        # apply changes
+        connection_obj.commit()
+    finally:
+        # close connection __exit__ method
+        connection_obj.close()
 
-    def __init__(self, usr: str, pwd: str, hst: str) -> None:
-        """
-        MySqlCrud class constructor used to initialize database setups
-        :param usr: <str> db username
-        :param pwd: <str> db password
-        :param hst: <str> db host
-        """
-        self.user = usr
-        self.password = pwd
-        self.host = hst
 
-    @contextmanager
-    def connect_database(self, database: str) -> None:
-        """
-        This context manager is created to manage properly external resources
-        :param database: <str> Name of database to connect
-        :return: None
-        """
-        # instantiate connection obj __init__ method
-        connection_obj = connect(host=self.host,
-                                 user=self.user,
-                                 password=self.password,
-                                 database=database)
-        try:
-            # connect to db __enter__ method
-            yield connection_obj
-        except Exception:
-            # rollback all changes
-            connection_obj.rollback()
+def read_data_from_db(host, user, password, database: str, query: str,
+                      output_format) -> DataFrame or list or None:
+    """
+    This method is created to fetch data from databases with support of context managers
+    :param database: <str> Name of database to fetch data
+    :param table_name:  <str> Name of table to fetch data
+    :param output_format: <str> set the output format. [Dataframe, list , None]
+    :return: <DataFrame/list/None> data which is taken from database system
+    """
+    with connect_database(host, user, password,
+                          database=database) as connection:
+        if output_format == DataFrame:
+            # get data as dataframe
+            query_data: DataFrame = read_sql(sql=f"{query};", con=connection)
+            return query_data
+        elif output_format == list:
+            cursor_obj = connection.cursor()
+            cursor_obj.execute(f"{query};")
+            query_data: list = cursor_obj.fetchall()
+            return query_data
         else:
-            # apply changes
-            connection_obj.commit()
-        finally:
-            # close connection __exit__ method
-            connection_obj.close()
-
-    def read_data_from_db(self, database: str, query: str,
-                          output_format) -> DataFrame or list or None:
-        """
-        This method is created to fetch data from databases with support of context managers
-        :param database: <str> Name of database to fetch data
-        :param table_name:  <str> Name of table to fetch data
-        :param output_format: <str> set the output format. [Dataframe, list , None]
-        :return: <DataFrame/list/None> data which is taken from database system
-        """
-        # we used our built-in context manager
-        with self.connect_database(database=database) as connection:
-            if output_format == DataFrame:
-                # get data as dataframe
-                query_data: DataFrame = read_sql(sql=f"{query};",
-                                                 con=connection)
-                return query_data
-            elif output_format == list:
-                cursor_obj = connection.cursor()
-                cursor_obj.execute(f"{query};")
-                query_data: list = cursor_obj.fetchall()
-                return query_data
-            else:
-                return None
+            return None
 
 
 # create a ConfigParser class instance
@@ -101,10 +88,11 @@ if __name__ == "__main__":
     user = str(user_info["user"])
     password = str(user_info["password"])
     host = str(db_info["host"])
-    # instantiate MySqlCrud object
-    mysql_obj = MySqlCrud(usr=user, pwd=password, hst=host)
     # read data from database
-    data = mysql_obj.read_data_from_db(database='holibrary',
-                                       query='select * from Books;',
-                                       output_format=DataFrame)
-    print(data)
+    books_df = read_data_from_db(host=host,
+                                 user=user,
+                                 password=password,
+                                 database='holibrary',
+                                 query='select * from Books;',
+                                 output_format=DataFrame)
+    print(books_df)
