@@ -24,6 +24,7 @@ graphviz = "^0.20.1"
 mysql-connector-python = "^8.0.33"
 lxml = "^4.9.2"
 aiohttp = "^3.8.4"
+openpyxl = "^3.1.2"
 
 [tool.poetry.dev-dependencies]
 
