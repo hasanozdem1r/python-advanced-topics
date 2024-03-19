@@ -1,4 +1,8 @@
 ![](docs/static/project_header.jpg)
+
+# WARNING
+Convert each topic to poetry
+
 # PYTHON ADVANCED TOPICS
 Comprehensive repository of advanced Python programming concepts and techniques, designed to help developers and programmers deepen their understanding and mastery of the language. The repository covers a wide range of topics, from advanced data structures and algorithms, to functional programming, concurrency and parallelism, network programming, web development, machine learning, and more.
 
