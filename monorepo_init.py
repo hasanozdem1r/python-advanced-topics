@@ -1,8 +1,10 @@
 import os
 import subprocess
 
+ROOT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
-# Function to run poetry init command in the current directory
+
+# function to run poetry init command in the current directory
 def run_poetry_init():
     try:
         print("Running poetry init...")
@@ -15,18 +17,29 @@ def run_poetry_init():
         print(f"Error: {e}")
 
 
-# Function to iterate through subdirectories recursively
-def process_directories(root_dir):
+def run_poetry_install():
+    try:
+        print("Running poetry install...")
+        subprocess.run(["poetry", "install"], check=True, text=True, input="\n")
+        print("Poetry dependencies installed successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e}")
+
+
+def process_directories(root_dir: str, command: str):
+    """Iterate through subdirectories recursively"""
     for directory in os.listdir(root_dir):
         if directory[0] != '.' and os.path.isdir(directory):
             print(directory)
             os.chdir(directory)
-            print(f"\nInitializing poetry in directory: {directory}")
-            run_poetry_init()
+            if command == 'init':
+                print(f"\nInitializing poetry in directory: {directory}")
+                run_poetry_init()
+            elif command == 'install':
+                print(f"\nRunning poetry install in directory: {directory}")
+                run_poetry_install()
             os.chdir(root_dir)
 
 
-# Starting point
 if __name__ == "__main__":
-    root_directory = "/d/works/python/python_advanced_topics"
-    process_directories(root_directory)
+    process_directories(root_dir=ROOT_DIRECTORY, command='install')
