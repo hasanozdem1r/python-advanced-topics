@@ -11,6 +11,7 @@ typer = "^0.10.0"
 rich = "^13.7.1"
 pendulum = "^3.0.0"
 pydantic = "^2.6.4"
+pandas = "^2.2.1"
 
 
 [build-system]
