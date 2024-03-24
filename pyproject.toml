@@ -3,28 +3,10 @@ name = "python_advanced_topics"
 version = "0.1.0"
 description = ""
 authors = ["hasanozdem1r <hasanozdemir1@trakya.edu.tr>"]
+packages = [{include = "api_practices"},{include = "asynchronous"}]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-dask = "^2022.6.1"
-pre-commit = "^2.20.0"
-backoff = "^2.1.2"
-requests = "^2.28.1"
-python-dotenv = "^0.21.0"
-bs4 = "^0.0.1"
-pandas = "^1.5.3"
-asyncio = "^3.4.3"
-rich = "^13.3.1"
-jupyterlab = "^3.6.2"
-polars = "^0.16.16"
-memray = "^1.7.0"
-prettytable = "^3.7.0"
-black = "^23.3.0"
-graphviz = "^0.20.1"
-mysql-connector-python = "^8.0.33"
-lxml = "^4.9.2"
-aiohttp = "^3.8.4"
-openpyxl = "^3.1.2"
+python = "^3.9"
 
 [tool.poetry.dev-dependencies]
 
