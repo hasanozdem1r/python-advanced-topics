@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "crud-operations-on-files"
+version = "0.1.0"
+description = ""
+authors = ["Hasan Ozdemir <hasanozdemir1@trakya.edu.tr>"]
+readme = "README.md"
+packages = [{include = "crud_operations_on_files"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

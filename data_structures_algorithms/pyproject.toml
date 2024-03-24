@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "data-structures-algorithms"
+version = "0.1.0"
+description = ""
+authors = ["Hasan Ozdemir <hasanozdemir1@trakya.edu.tr>"]
+readme = "README.md"
+packages = [{include = "data_structures_algorithms"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
