@@ -42,7 +42,7 @@ def process_directories(root_dir: str, command: str):
 
 
 if __name__ == "__main__":
-    #process_directories(root_dir=ROOT_DIRECTORY, command='install')
-    for directory in os.listdir(ROOT_DIRECTORY):
-        if directory[0] != '.' and os.path.isdir(directory):
-            print(directory)
+    process_directories(root_dir=ROOT_DIRECTORY, command='init')
+    # for directory in os.listdir(ROOT_DIRECTORY):
+    #     if directory[0] != '.' and os.path.isdir(directory):
+    #         print(directory)
