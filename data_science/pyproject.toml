@@ -8,6 +8,7 @@ packages = [{include = "data_science"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+great-expectations = "^0.18.19"
 
 
 [build-system]
