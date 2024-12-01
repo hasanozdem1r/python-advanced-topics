@@ -1,11 +1,17 @@
 import os
 import subprocess
+from enum import Enum
 
 ROOT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 
+class Commands(Enum):
+    INSTALL = "install"
+    INIT = "init"
+
+
 # function to run poetry init command in the current directory
-def run_poetry_init():
+def execute_poetry_init() -> None:
     try:
         print("Running poetry init...")
         subprocess.run(["poetry", "init", "--no-interaction"],
@@ -17,7 +23,7 @@ def run_poetry_init():
         print(f"Error: {e}")
 
 
-def run_poetry_install():
+def execute_poetry_install() -> None:
     try:
         print("Running poetry install...")
         subprocess.run(["poetry", "install"], check=True, text=True, input="\n")
@@ -26,23 +32,25 @@ def run_poetry_install():
         print(f"Error: {e}")
 
 
-def process_directories(root_dir: str, command: str):
+def process_over_directories(root_dir: str, command: Commands) -> None:
     """Iterate through subdirectories recursively"""
     for directory in os.listdir(root_dir):
-        if directory[0] != '.' and os.path.isdir(directory):
+        if directory[0] != '.' and os.path.isdir(
+                directory) and directory != "docs":
             print(directory)
             os.chdir(directory)
             if command == 'init':
                 print(f"\nInitializing poetry in directory: {directory}")
-                run_poetry_init()
+                execute_poetry_init()
             elif command == 'install':
                 print(f"\nRunning poetry install in directory: {directory}")
-                run_poetry_install()
+                execute_poetry_install()
             os.chdir(root_dir)
 
 
 if __name__ == "__main__":
-    process_directories(root_dir=ROOT_DIRECTORY, command='init')
+    process_over_directories(root_dir=ROOT_DIRECTORY,
+                             command=Commands.INIT.value)
     # for directory in os.listdir(ROOT_DIRECTORY):
     #     if directory[0] != '.' and os.path.isdir(directory):
     #         print(directory)

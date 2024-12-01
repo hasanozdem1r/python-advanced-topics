@@ -9,7 +9,6 @@ def worker(number):
     print("I am Worker {}, I slept for {} seconds".format(number, sleep))
 
 
-
 if __name__ == "__main__":
     for i in range(5):
         t = multiprocessing.Process(target=worker, args=(i,))
