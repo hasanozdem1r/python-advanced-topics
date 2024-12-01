@@ -44,5 +44,5 @@ async def call_say_hello():
     print(f"finished at {time.strftime('%X')}")
 
 
-# call call_say_hello
-asyncio.run(call_say_hello())
+if __name__ == "__main__":
+    asyncio.run(call_say_hello())

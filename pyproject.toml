@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "python-advanced-topics"
 version = "0.1.0"
-description = ""
+description = "Python Advanced Topics covered within Monorepo"
 authors = ["Hasan Özdemir"]
 readme = "README.md"
 
@@ -13,3 +13,33 @@ pre-commit = "^3.7.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.workspace]
+includes = [
+    "api_practices",
+    "asynchronous",
+    "automation_with_selenium",
+    "best_practices",
+    "comprehension",
+    "computer_vision",
+    "crud_operations_on_files",
+    "data_science",
+    "data_structures_algorithms",
+    "database",
+    "debugging",
+    "decorators",
+    "design_patterns",
+    "events",
+    "flow_control",
+    "functions",
+    "generators",
+    "multithreading_101",
+    "network",
+    "object_oriented_programming",
+    "packages",
+    "parallel_computing",
+    "projects",
+    "regular_expressions",
+    "testing",
+    "web_scraping"
+]
