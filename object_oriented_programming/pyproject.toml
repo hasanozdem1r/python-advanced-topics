@@ -1,4 +1,3 @@
-[tool.poetry]
 name = "object-oriented-programming"
 version = "0.1.0"
 description = ""
